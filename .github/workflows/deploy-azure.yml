@@ -1,27 +1,17 @@
-name: Deploy NBA Oracle to Azure Blob
+- name: Checkout repository
+  uses: actions/checkout@v3
+  with:
+    fetch-depth: 0
 
-on:
-  push:
-    branches:
-      - main
+- name: Install Azure CLI
+  run: |
+    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install Azure CLI
-        run: |
-          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-      - name: Upload to Azure Blob Storage
-        run: |
-          az storage blob upload-batch \
-            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
-            --destination '$web' \
-            --source . \
-            --overwrite
+- name: Upload to Azure Blob Storage
+  run: |
+    az storage blob upload-batch \
+      --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+      --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
+      --destination '$web' \
+      --source "${{ github.workspace }}" \
+      --overwrite
