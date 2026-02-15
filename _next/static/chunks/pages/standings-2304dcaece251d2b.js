@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[82590],{51349:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/standings",function(){return u(18372)}])}},function(n){n.O(0,[99940,56642,84974,38800,62058,52791,55244,12866,59380,45963,60805,95639,49774,92888,40179],(function(){return _=51349,n(n.s=_);var _}));var _=n.O();_N_E=_}]);

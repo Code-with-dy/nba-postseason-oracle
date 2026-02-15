@@ -1,0 +1,13 @@
+# Ignore all NBA/CDN external folders
+2kleague.nba.com/
+50pdq8z3.media.zestyio.com/
+ajax.googleapis.com/
+ak-static.cms.nba.com/
+apis.google.com/
+assets.adobedtm.com/
+*.gif
+*.txt
+*.cloudfront.net/
+cdn*/
+www.googletagmanager.com/
+www.googletagservices.com/

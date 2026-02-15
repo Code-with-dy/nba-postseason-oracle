@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[11217],{45418:function(n,u,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/stats/lineups/[slug]",function(){return _(45434)}])}},function(n){n.O(0,[99940,84974,38800,62058,52791,21062,9066,25046,17659,6066,21792,49774,92888,40179],(function(){return u=45418,n(n.s=u);var u}));var u=n.O();_N_E=u}]);

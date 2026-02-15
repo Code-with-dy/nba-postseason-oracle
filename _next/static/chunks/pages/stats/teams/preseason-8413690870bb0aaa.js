@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[79172],{58223:function(n,_,s){(window.__NEXT_P=window.__NEXT_P||[]).push(["/stats/teams/preseason",function(){return s(90291)}])}},function(n){n.O(0,[99940,84974,38800,62058,52791,55244,45963,59713,49774,92888,40179],(function(){return _=58223,n(n.s=_);var _}));var _=n.O();_N_E=_}]);
