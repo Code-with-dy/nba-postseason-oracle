@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<!-- Mirrored from socialimpact.nba.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Feb 2026 09:35:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},feature_flags:["soft_nav"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1589016594",accountID:"1759872",trustKey:"2890199",xpid:"VQECWF5UChABUVFUBwYEUVwD",licenseKey:"09f0cb5c68",applicationID:"1506073782",browserID:"1589016594"};;/*! For license information please see nr-loader-spa-1.309.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>o,US:()=>l,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>h});var n=r(6154),i=r(1863),s=r(944),a=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,a.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(e,t){c()[e]=t}function h(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>u,K7:()=>c,P3:()=>d,XX:()=>i,Yy:()=>o,df:()=>s,qY:()=>n,v4:()=>a});const n="events",i="jserrors",s="browser/blobs",a="rum",o="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations",spa:"spa"},d={[c.pageViewEvent]:1,[c.pageViewTiming]:2,[c.metrics]:3,[c.jserrors]:4,[c.spa]:5,[c.ajax]:6,[c.sessionTrace]:7,[c.softNav]:8,[c.sessionReplay]:9,[c.logging]:10,[c.genericEvents]:11},u={[c.pageViewEvent]:a,[c.pageViewTiming]:n,[c.ajax]:n,[c.spa]:n,[c.softNav]:n,[c.metrics]:i,[c.jserrors]:i,[c.sessionTrace]:s,[c.sessionReplay]:s,[c.logging]:o,[c.genericEvents]:"ins"}},944:(e,t,r)=>{"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({agentIdentifier:null,drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},993:(e,t,r)=>{"use strict";r.d(t,{A$:()=>s,ET:()=>a,TZ:()=>o,p_:()=>i});var n=r(860);const i={ERROR:"ERROR",WARN:"WARN",INFO:"INFO",DEBUG:"DEBUG",TRACE:"TRACE"},s={OFF:0,ERROR:1,WARN:2,INFO:3,DEBUG:4,TRACE:5},a="log",o=n.K7.logging},1541:(e,t,r)=>{"use strict";r.d(t,{U:()=>i,f:()=>n});const n={MFE:"MFE",BA:"BA"};function i(e,t){if(2!==t?.harvestEndpointVersion)return{};const r=t.agentRef.runtime.appMetadata.agents[0].entityGuid;return e?{"source.id":e.id,"source.name":e.name,"source.type":e.type,"parent.id":e.parent?.id||r,"parent.type":e.parent?.type||n.BA}:{"entity.guid":r,appId:t.agentRef.info.applicationID}}},1687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>d,Ze:()=>h,x3:()=>u});var n=r(3241),i=r(7836),s=r(3606),a=r(860),o=r(2646);const c={};function d(e,t){const r={staged:!1,priority:a.P3[t]||0};l(e),c[e].get(t)||c[e].set(t,r)}function u(e,t){e&&c[e]&&(c[e].get(t)&&c[e].delete(t),p(e,t,!1),c[e].size&&f(e))}function l(e){if(!e)throw new Error("agentIdentifier required");c[e]||(c[e]=new Map)}function h(e="",t="feature",r=!1){if(l(e),!e||!c[e].get(t)||r)return p(e,t);c[e].get(t).staged=!0,f(e)}function f(e){const t=Array.from(c[e]);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{c[e].delete(t),p(e,t)}))}function p(e,t,r=!0){const a=e?i.ee.get(e):i.ee,c=s.i.handlers;if(!a.aborted&&a.backlog&&c){if((0,n.W)({agentIdentifier:e,type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=c[t];if(r){for(let t=0;e&&t<e.length;++t)g(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof o.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete c[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function g(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],s=e[2];n.apply(i,s)}})}},1738:(e,t,r)=>{"use strict";r.d(t,{U:()=>f,Y:()=>h});var n=r(3241),i=r(9908),s=r(1863),a=r(944),o=r(5701),c=r(3969),d=r(8362),u=r(860),l=r(4261);function h(e,t,r,s){const h=s||r;!h||h[e]&&h[e]!==d.d.prototype[e]||(h[e]=function(){(0,i.p)(c.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({agentIdentifier:r.agentIdentifier,drained:!!o.B?.[r.agentIdentifier],type:"data",name:"api",feature:l.Pl+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,a.R)(23,e)}})}function f(e,t,r,n,a){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(a||null===r)&&(0,i.p)(l.Pl+n,[(0,s.t)(),t,r],void 0,"session",e.ee)}},1741:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(944),i=r(4261);class s{#e(e,...t){if(this[e]!==s.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e(i.$9,e,t)}start(){return this.#e(i.d3)}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},1863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},1910:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(944);const i=new Map;function s(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),s=t.includes("nrWrapper");return r||s||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},2555:(e,t,r)=>{"use strict";r.d(t,{D:()=>o,f:()=>a});var n=r(384),i=r(8122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function a(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const o=e=>(0,i.a)(e,s)},2614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>a,H3:()=>n,g:()=>d,iL:()=>c,tS:()=>o,uh:()=>i,wk:()=>s});const n="NRBA",i="SESSION",s=144e5,a=18e5,o={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},d={OFF:0,FULL:1,ERROR:2}},2646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},2843:(e,t,r)=>{"use strict";r.d(t,{G:()=>s,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function s(e,t,r){(0,n.sp)("pagehide",e,t,r)}},3241:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(6154);const i="newrelic";function s(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},3304:(e,t,r)=>{"use strict";r.d(t,{A:()=>s});var n=r(7836);const i=()=>{const e=new WeakSet;return(t,r)=>{if("object"==typeof r&&null!==r){if(e.has(r))return;e.add(r)}return r}};function s(e){try{return JSON.stringify(e,i())??""}catch(e){try{n.ee.emit("internal-error",[e])}catch(e){}return""}}},3333:(e,t,r)=>{"use strict";r.d(t,{$v:()=>u,TZ:()=>n,Xh:()=>c,Zp:()=>i,kd:()=>d,mq:()=>o,nf:()=>a,qN:()=>s});const n=r(860).K7.genericEvents,i=["auxclick","click","copy","keydown","paste","scrollend"],s=["focus","blur"],a=4,o=1e3,c=2e3,d=["PageAction","UserAction","BrowserPerformance"],u={RESOURCES:"experimental.resources",REGISTER:"register"}},3434:(e,t,r)=>{"use strict";r.d(t,{Jt:()=>s,YM:()=>d});var n=r(7836),i=r(5607);const s="nr@original:".concat(i.W),a=50;var o=Object.prototype.hasOwnProperty,c=!1;function d(e,t){return e||(e=n.ee),r.inPlace=function(e,t,n,i,s){n||(n="");const a="-"===n.charAt(0);for(let o=0;o<t.length;o++){const c=t[o],d=e[c];l(d)||(e[c]=r(d,a?c+n:n,i,c,s))}},r.flag=s,r;function r(t,r,n,c,d){return l(t)?t:(r||(r=""),nrWrapper[s]=t,function(e,t,r){if(Object.defineProperty&&Object.keys)try{return Object.keys(e).forEach(function(r){Object.defineProperty(t,r,{get:function(){return e[r]},set:function(t){return e[r]=t,t}})}),t}catch(e){u([e],r)}for(var n in e)o.call(e,n)&&(t[n]=e[n])}(t,nrWrapper,e),nrWrapper);function nrWrapper(){var s,o,l,h;let f;try{o=this,s=[...arguments],l="function"==typeof n?n(s,o):n||{}}catch(t){u([t,"",[s,o,c],l],e)}i(r+"start",[s,o,c],l,d);const p=performance.now();let g;try{return h=t.apply(o,s),g=performance.now(),h}catch(e){throw g=performance.now(),i(r+"err",[s,o,e],l,d),f=e,f}finally{const e=g-p,t={start:p,end:g,duration:e,isLongTask:e>=a,methodName:c,thrownError:f};t.isLongTask&&i("long-task",[t,o],l,d),i(r+"end",[s,o,h],l,d)}}}function i(r,n,i,s){if(!c||t){var a=c;c=!0;try{e.emit(r,n,i,t,s)}catch(t){u([t,r,n,i],e)}c=a}}}function u(e,t){t||(t=n.ee);try{t.emit("internal-error",e)}catch(e){}}function l(e){return!(e&&"function"==typeof e&&e.apply&&!e[s])}},3606:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(9908);s.on=a;var i=s.handlers={};function s(e,t,r,s){a(s||n.d,i,e,t,r)}function a(e,t,r,i,s){s||(s="feature"),e||(e=n.d);var a=t[s]=t[s]||{};(a[r]=a[r]||[]).push([e,i])}},3738:(e,t,r)=>{"use strict";r.d(t,{He:()=>i,Kp:()=>o,Lc:()=>d,Rz:()=>u,TZ:()=>n,bD:()=>s,d3:()=>a,jx:()=>l,sl:()=>h,uP:()=>c});const n=r(860).K7.sessionTrace,i="bstResource",s="resource",a="-start",o="-end",c="fn"+a,d="fn"+o,u="pushState",l=1e3,h=3e4},3785:(e,t,r)=>{"use strict";r.d(t,{R:()=>c,b:()=>d});var n=r(9908),i=r(1863),s=r(860),a=r(3969),o=r(993);function c(e,t,r={},c=o.p_.INFO,d=!0,u,l=(0,i.t)()){(0,n.p)(a.xV,["API/logging/".concat(c.toLowerCase(),"/called")],void 0,s.K7.metrics,e),(0,n.p)(o.ET,[l,t,r,c,d,u],void 0,s.K7.logging,e)}function d(e){return"string"==typeof e&&Object.values(o.p_).some(t=>t===e.toUpperCase().trim())}},3878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function s(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>s,jT:()=>n,sp:()=>i})},3962:(e,t,r)=>{"use strict";r.d(t,{AM:()=>a,O2:()=>l,OV:()=>s,Qu:()=>h,TZ:()=>c,ih:()=>f,pP:()=>o,t1:()=>u,tC:()=>i,wD:()=>d});var n=r(860);const i=["click","keydown","submit"],s="popstate",a="api",o="initialPageLoad",c=n.K7.softNav,d=5e3,u=500,l={INITIAL_PAGE_LOAD:"",ROUTE_CHANGE:1,UNSPECIFIED:2},h={INTERACTION:1,AJAX:2,CUSTOM_END:3,CUSTOM_TRACER:4},f={IP:"in progress",PF:"pending finish",FIN:"finished",CAN:"cancelled"}},3969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>o,rs:()=>i,xV:()=>a,z_:()=>s});const n=r(860).K7.metrics,i="sm",s="cm",a="storeSupportabilityMetrics",o="storeEventMetrics"},4234:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(7836),i=r(1687);class s{constructor(e,t){this.agentIdentifier=e,this.ee=n.ee.get(e),this.featureName=t,this.blocked=!1}deregisterDrain(){(0,i.x3)(this.agentIdentifier,this.featureName)}}},4261:(e,t,r)=>{"use strict";r.d(t,{$9:()=>u,BL:()=>c,CH:()=>p,Dl:()=>R,Fw:()=>w,PA:()=>v,Pl:()=>n,Pv:()=>A,Tb:()=>h,U2:()=>a,V1:()=>E,Wb:()=>T,bt:()=>y,cD:()=>b,d3:()=>x,dT:()=>d,eY:()=>g,fF:()=>f,hG:()=>s,hw:()=>i,k6:()=>o,nb:()=>m,o5:()=>l});const n="api-",i=n+"ixn-",s="addPageAction",a="addToTrace",o="addRelease",c="finished",d="interaction",u="log",l="noticeError",h="pauseReplay",f="recordCustomEvent",p="recordReplay",g="register",m="setApplicationVersion",v="setCurrentRouteName",b="setCustomAttribute",y="setErrorHandler",w="setPageViewName",R="setUserId",x="start",T="wrapLogger",E="measure",A="consent"},5205:(e,t,r)=>{"use strict";r.d(t,{j:()=>S});var n=r(384),i=r(1741);var s=r(2555),a=r(3333);const o=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var c=r(2614),d=r(944),u=r(8122);const l="[data-nr-mask]",h=e=>(0,u.a)(e,(()=>{const e={feature_flags:[],experimental:{allow_registered_children:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},api:{get allow_registered_children(){return e.feature_flags.includes(a.$v.REGISTER)||e.experimental.allow_registered_children},set allow_registered_children(t){e.experimental.allow_registered_children=t},duplicate_registered_data:!1},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(a.$v.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:c.wk,inactiveMs:c.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){o(t)?e.mask_selector="".concat(t,",").concat(l):""===t||null===t?e.mask_selector=l:(0,d.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){o(t)?e.block_selector+=",".concat(t):""!==t&&(0,d.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,d.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},spa:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]}}})());var f=r(6154),p=r(9324);let g=0;const m={buildEnv:p.F3,distMethod:p.Xs,version:p.xv,originTime:f.WN},v={consented:!1},b={appMetadata:{},get consented(){return this.session?.state?.consent||v.consented},set consented(e){v.consented=e},customTransaction:void 0,denyList:void 0,disabled:!1,harvester:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++g}},y=e=>{const t=(0,u.a)(e,b),r=Object.keys(m).reduce((e,t)=>(e[t]={value:m[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)};var w=r(5701);const R=e=>{const t=e.startsWith("http");e+="index.html",r.p=t?e:"https://"+e};var x=r(7836),T=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},A=e=>(0,u.a)(e,E),_=new Set;function S(e,t={},r,a){let{init:o,info:c,loader_config:d,runtime:u={},exposed:l=!0}=t;if(!c){const e=(0,n.pV)();o=e.init,c=e.info,d=e.loader_config}e.init=h(o||{}),e.loader_config=A(d||{}),c.jsAttributes??={},f.bv&&(c.jsAttributes.isWorker=!0),e.info=(0,s.D)(c);const p=e.init,g=[c.beacon,c.errorBeacon];_.has(e.agentIdentifier)||(p.proxy.assets&&(R(p.proxy.assets),g.push(p.proxy.assets)),p.proxy.beacon&&g.push(p.proxy.beacon),e.beacons=[...g],function(e){const t=(0,n.pV)();Object.getOwnPropertyNames(i.W.prototype).forEach(r=>{const n=i.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let s=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return s?s(...t):n})})}(e),(0,n.US)("activatedFeatures",w.B)),u.denyList=[...p.ajax.deny_list||[],...p.ajax.block_internal?g:[]],u.ptid=e.agentIdentifier,u.loaderType=r,e.runtime=y(u),_.has(e.agentIdentifier)||(e.ee=x.ee.get(e.agentIdentifier),e.exposed=l,(0,T.W)({agentIdentifier:e.agentIdentifier,drained:!!w.B?.[e.agentIdentifier],type:"lifecycle",name:"initialize",feature:void 0,data:e.config})),_.add(e.agentIdentifier)}},5270:(e,t,r)=>{"use strict";r.d(t,{Aw:()=>a,SR:()=>s,rF:()=>o});var n=r(384),i=r(7767);function s(e){return!!(0,n.dV)().o.MO&&(0,i.V)(e)&&!0===e?.session_trace.enabled}function a(e){return!0===e?.session_replay.preload&&s(e)}function o(e,t){try{if("string"==typeof t?.type){if("password"===t.type.toLowerCase())return"*".repeat(e?.length||0);if(void 0!==t?.dataset?.nrUnmask||t?.classList?.contains("nr-unmask"))return e}}catch(e){}return"string"==typeof e?e.replace(/[\S]/g,"*"):"*".repeat(e?.length||0)}},5289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>a,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function s(){return"undefined"==typeof document||"complete"===document.readyState}function a(e,t){if(s())return e();const r=(0,i.J)(e),a=setInterval(()=>{s()&&(clearInterval(a),r())},500);(0,n.sp)("load",r,t)}function o(e){if(s())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(s())return e();(0,n.sp)("popstate",e)}},5607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(9566).bz)()},5701:(e,t,r)=>{"use strict";r.d(t,{B:()=>s,t:()=>a});var n=r(3241);const i=new Set,s={};function a(e,t){const r=t.agentIdentifier;s[r]??={},e&&"object"==typeof e&&(i.has(r)||(t.ee.emit("rumresp",[e]),s[r]=e,i.add(r),(0,n.W)({agentIdentifier:r,loaded:!0,drained:!0,type:"lifecycle",name:"load",feature:void 0,data:e})))}},6154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>d,RI:()=>i,WN:()=>h,bv:()=>s,eN:()=>f,gm:()=>a,lR:()=>l,m:()=>c,mw:()=>o,sb:()=>u});var n=r(1863);const i="undefined"!=typeof window&&!!window.document,s="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===a?.document?.visibilityState),c=""+a?.location,d=/iPad|iPhone|iPod/.test(a.navigator?.userAgent),u=d&&"undefined"==typeof SharedWorker,l=(()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),h=Date.now()-(0,n.t)(),f=()=>"undefined"!=typeof PerformanceNavigationTiming&&a?.performance?.getEntriesByType("navigation")?.[0]?.responseStart},6344:(e,t,r)=>{"use strict";r.d(t,{BB:()=>u,Qb:()=>l,TZ:()=>i,Ug:()=>a,Vh:()=>s,_s:()=>o,bc:()=>d,yP:()=>c});var n=r(2614);const i=r(860).K7.sessionReplay,s="errorDuringReplay",a=.12,o={DomContentLoaded:0,Load:1,FullSnapshot:2,IncrementalSnapshot:3,Meta:4,Custom:5},c={[n.g.ERROR]:15e3,[n.g.FULL]:3e5,[n.g.OFF]:0},d={RESET:{message:"Session was reset",sm:"Reset"},IMPORT:{message:"Recorder failed to import",sm:"Import"},TOO_MANY:{message:"429: Too Many Requests",sm:"Too-Many"},TOO_BIG:{message:"Payload was too large",sm:"Too-Big"},CROSS_TAB:{message:"Session Entity was set to OFF on another tab",sm:"Cross-Tab"},ENTITLEMENTS:{message:"Session Replay is not allowed and will not be started",sm:"Entitlement"}},u=5e3,l={API:"api",RESUME:"resume",SWITCH_TO_FULL:"switchToFull",INITIALIZE:"initialize",PRELOAD:"preload"}},6389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},6630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},6774:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.jserrors},7295:(e,t,r)=>{"use strict";r.d(t,{Xv:()=>a,gX:()=>i,iW:()=>s});var n=[];function i(e){if(!e||s(e))return!1;if(0===n.length)return!0;if("*"===n[0].hostname)return!1;for(var t=0;t<n.length;t++){var r=n[t];if(r.hostname.test(e.hostname)&&r.pathname.test(e.pathname))return!1}return!0}function s(e){return void 0===e.hostname}function a(e){if(n=[],e&&e.length)for(var t=0;t<e.length;t++){let r=e[t];if(!r)continue;if("*"===r)return void(n=[{hostname:"*"}]);0===r.indexOf("http://")?r=r.substring(7):0===r.indexOf("https:///")&&(r=r.substring(8));const i=r.indexOf("index.html");let s,a;i>0?(s=r.substring(0,i),a=r.substring(i)):(s=r,a="*");let[c]=s.split(":");n.push({hostname:o(c),pathname:o(a,!0)})}}function o(e,t=!1){const r=e.replace(/[.+?^${}()|[\]\\]/g,e=>"\\"+e).replace(/\*/g,".*?");return new RegExp((t?"^":"")+r+"$")}},7485:(e,t,r)=>{"use strict";r.d(t,{D:()=>i});var n=r(6154);function i(e){if(0===(e||"").indexOf("data:"))return{protocol:"data"};try{const t=new URL(e%2clocation.html),r={port:t.port,hostname:t.hostname,pathname:t.pathname,search:t.search,protocol:t.protocol.slice(0,t.protocol.indexOf(":")),sameOrigin:t.protocol===n.gm?.location?.protocol&&t.host===n.gm?.location?.host};return r.port&&""!==r.port||("http:"===t.protocol&&(r.port="80"),"https:"===t.protocol&&(r.port="443")),r.pathname&&""!==r.pathname?r.pathname.startsWith("index.html")||(r.pathname="/".concat(r.pathname)):r.pathname="index.html",r}catch(e){return{}}}},7699:(e,t,r)=>{"use strict";r.d(t,{It:()=>s,KC:()=>o,No:()=>i,qh:()=>a});var n=r(860);const i=16e3,s=1e6,a="SESSION_ERROR",o={[n.K7.logging]:!0,[n.K7.genericEvents]:!1,[n.K7.jserrors]:!1,[n.K7.ajax]:!1}},7767:(e,t,r)=>{"use strict";r.d(t,{V:()=>i});var n=r(6154);const i=e=>n.RI&&!0===e?.privacy.cookies_enabled},7836:(e,t,r)=>{"use strict";r.d(t,{P:()=>o,ee:()=>c});var n=r(384),i=r(8990),s=r(2646),a=r(5607);const o="nr@context:".concat(a.W),c=function e(t,r){var n={},a={},u={},l=!1;try{l=16===r.length&&d.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var h={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,s){!1!==s&&(s=!0);if(c.aborted&&!i)return;t&&s&&t.emit(e,r,n);var o=f(n);g(e).forEach(e=>{e.apply(o,r)});var d=v()[a[e]];d&&d.push([h,e,r,o]);return o},get:m,listeners:g,context:f,buffer:function(e,t){const r=v();if(t=t||"feature",h.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{a[n]=t,t in r||(r[t]=[])})},abort:function(){h._aborted=!0,Object.keys(h.backlog).forEach(e=>{delete h.backlog[e]})},isBuffering:function(e){return!!v()[a[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(h,"aborted",{get:()=>{let e=h._aborted||!1;return e||(t&&(e=t.aborted),e)}}),h;function f(e){return e&&e instanceof s.y?e:e?(0,i.I)(e,o,()=>new s.y(o)):new s.y(o)}function p(e,t){n[e]=g(e).concat(t)}function g(e){return n[e]||[]}function m(t){return u[t]=u[t]||e(h,t)}function v(){return h.backlog}}(void 0,"globalEE"),d=(0,n.Zm)();d.ee||(d.ee=c)},8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let a in s)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){r[a]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},8139:(e,t,r)=>{"use strict";r.d(t,{u:()=>h});var n=r(7836),i=r(3434),s=r(8990),a=r(6154);const o={},c=a.gm.XMLHttpRequest,d="addEventListener",u="removeEventListener",l="nr@wrapped:".concat(n.P);function h(e){var t=function(e){return(e||n.ee).get("events")}(e);if(o[t.debugId]++)return t;o[t.debugId]=1;var r=(0,i.YM)(t,!0);function h(e){r.inPlace(e,[d,u],"-",p)}function p(e,t){return e[1]}return"getPrototypeOf"in Object&&(a.RI&&f(document,h),c&&f(c.prototype,h),f(a.gm,h)),t.on(d+"-start",function(e,t){var n=e[1];if(null!==n&&("function"==typeof n||"object"==typeof n)&&"newrelic"!==e[0]){var i=(0,s.I)(n,l,function(){var e={object:function(){if("function"!=typeof n.handleEvent)return;return n.handleEvent.apply(n,arguments)},function:n}[typeof n];return e?r(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=e[1]=i}}),t.on(u+"-start",function(e){e[1]=this.wrapped||e[1]}),t}function f(e,t,...r){let n=e;for(;"object"==typeof n&&!Object.prototype.hasOwnProperty.call(n,d);)n=Object.getPrototypeOf(n);n&&t(n,...r)}},8362:(e,t,r)=>{"use strict";r.d(t,{d:()=>s});var n=r(9566),i=r(1741);class s extends i.W{agentIdentifier=(0,n.LA)(16)}},8374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},8990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},9119:(e,t,r)=>{"use strict";r.d(t,{L:()=>s});var n=/([^?#]*)[^#]*(#[^?]*|$).*/,i=/([^?#]*)().*/;function s(e,t){return e?e.replace(t?n:i,"$1$2"):e}},9300:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.ajax},9324:(e,t,r)=>{"use strict";r.d(t,{AJ:()=>a,F3:()=>i,Xs:()=>s,Yq:()=>o,xv:()=>n});const n="1.309.0",i="PROD",s="CDN",a="@newrelic/rrweb",o="1.0.1"},9566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>o,ZF:()=>c,bz:()=>a,el:()=>d});var n=r(6154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function s(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map(e=>"x"===e?s(t,r++).toString(16):"y"===e?(3&s()|8).toString(16):e).join("")}function o(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var o=0;o<e;o++)a.push(s(r,i++).toString(16));return a.join("")}function c(){return o(16)}function d(){return o(32)}},9908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,s){s?(s.buffer([e],i),s.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var s=n[e]={exports:{}};return r[e](s,s.exports,i),s.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce((t,r)=>(i.f[r](e,t),t),[])),i.u=e=>({212:"nr-spa-compressor",249:"nr-spa-recorder",478:"nr-spa"}[e]+"-1.309.0.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.309.0.PROD:",i.l=(r,n,s,a)=>{if(e[r])e[r].push(n);else{var o,c;if(void 0!==s)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+s){o=l;break}}if(!o){c=!0;var h={478:"sha512-t+FHZOrUgx9rkcooc81PHyp8WYSuQSHeu6DbfA2qo7oVl3vV+SDc5UHYmQ3Y+ngsc+y6sVT3LlrYrBTbaWeXMQ==",249:"sha512-SfCYLPa8nAq9RImR3pAFU4+qiEzNQqH/yBjFxMh1akKZuGb/dRAcYlyEcCa5vGsGvW2S4bkq4ERRIvHQkR7yVg==",212:"sha512-g7KDPPY5ueQ7sFl33IoLOwV4aCwdj8Nk4vqVAfjXOZuY6gIppy4bYmzJeFrLWJ/WXK/oGTOTYgRqXrB9dsnf0w=="};(o=document.createElement("script")).charset="utf-8",i.nc&&o.setAttribute("nonce",i.nc),o.setAttribute("data-webpack",t+s),o.src=r,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),h[a]&&(o.integrity=h[a])}e[r]=[n];var f=(t,n)=>{o.onerror=o.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],o.parentNode&&o.parentNode.removeChild(o),i&&i.forEach(e=>e(n)),t)return t(n)},p=setTimeout(f.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=f.bind(null,o.onerror),o.onload=f.bind(null,o.onload),c&&document.head.appendChild(o)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={38:0,788:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var s=new Promise((r,i)=>n=e[t]=[r,i]);r.push(n[2]=s);var a=i.p+i.u(t),o=new Error;i.l(a,r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var s=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;o.message="Loading chunk "+t+" failed: ("+s+": "+a+")",o.name="ChunkLoadError",o.type=s,o.request=a,n[1](o)}},"chunk-"+t,t)}};var t=(t,r)=>{var n,s,[a,o,c]=r,d=0;if(a.some(t=>0!==e[t])){for(n in o)i.o(o,n)&&(i.m[n]=o[n]);if(c)c(i)}for(t&&t(r);d<a.length;d++)s=a[d],i.o(e,s)&&e[s]&&e[s][0](),e[s]=0},r=self["webpackChunk:NRBA-1.309.0.PROD"]=self["webpackChunk:NRBA-1.309.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(8374);var e=i(8362),t=i(860);const r=Object.values(t.K7);var n=i(5205);var s=i(9908),a=i(1863),o=i(4261),c=i(1738);var d=i(1687),u=i(4234),l=i(5289),h=i(6154),f=i(944),p=i(5270),g=i(7767),m=i(6389),v=i(7699);class b extends u.W{constructor(e,t){super(e.agentIdentifier,t),this.agentRef=e,this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,m.J)(()=>{(0,d.Ak)(e.agentIdentifier,this.featureName),t()}))}):(0,d.Ak)(e.agentIdentifier,t)}importAggregator(e,t,r={}){if(this.featAggregate)return;const n=async()=>{let n;await this.deferred;try{if((0,g.V)(e.init)){const{setupAgentSession:t}=await i.e(478).then(i.bind(i,8766));n=t(e)}}catch(e){(0,f.R)(20,e),this.ee.emit("internal-error",[e]),(0,s.p)(v.qh,[e],void 0,this.featureName,this.ee)}try{if(!this.#t(this.featureName,n,e.init))return(0,d.Ze)(this.agentIdentifier,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:i}=await t();this.featAggregate=new i(e,r),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,f.R)(34,e),this.abortHandler?.(),(0,d.Ze)(this.agentIdentifier,this.featureName,!0),this.loadedSuccessfully(!1),this.ee&&this.ee.abort()}};h.RI?(0,l.GG)(()=>n(),!0):n()}#t(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return(0,p.SR)(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}}var y=i(6630),w=i(2614),R=i(3241);class x extends b{static featureName=y.T;constructor(e){var t;super(e,y.T),this.setupInspectionEvents(e.agentIdentifier),t=e,(0,c.Y)(o.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,s.p)(o.Pl+o.Fw,[(0,a.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>i.e(478).then(i.bind(i,2467)))}setupInspectionEvents(e){const t=(t,r)=>{t&&(0,R.W)({agentIdentifier:e,timeStamp:t.timeStamp,loaded:"complete"===t.target.readyState,type:"window",name:r,data:t.target.location+""})};(0,l.sB)(e=>{t(e,"DOMContentLoaded")}),(0,l.GG)(e=>{t(e,"load")}),(0,l.Qr)(e=>{t(e,"navigate")}),this.ee.on(w.tS.UPDATE,(t,r)=>{(0,R.W)({agentIdentifier:e,type:"lifecycle",name:"session",data:r})})}}var T=i(384);class E extends e.d{constructor(e){var t;(super(),h.gm)?(this.features={},(0,T.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(x),(0,n.j)(this,e,e.loaderType||"agent"),t=this,(0,c.Y)(o.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,c.U)(t,e,r,o.cD,n);(0,f.R)(40,typeof r)}else(0,f.R)(39,typeof e)},t),function(e){(0,c.Y)(o.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,f.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,s.p)(o.Pl+"setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,c.U)(e,"enduser.id",t,o.Dl,!0)},e)}(this),function(e){(0,c.Y)(o.nb,function(t){if("string"==typeof t||null===t)return(0,c.U)(e,"application.version",t,o.nb,!1);(0,f.R)(42,typeof t)},e)}(this),function(e){(0,c.Y)(o.d3,function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,c.Y)(o.Pv,function(t=!0){if("boolean"==typeof t){if((0,s.p)(o.Pl+o.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum()})}}else(0,f.R)(65,typeof t)},e)}(this),this.run()):(0,f.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return r.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),n=[...this.desiredFeatures];n.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),n.forEach(r=>{if(!e[r.featureName]&&r.featureName!==t.K7.pageViewEvent)return;if(r.featureName===t.K7.spa)return void(0,f.R)(67);const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,f.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,f.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,T.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var A=i(2843),_=i(782);class S extends b{static featureName=_.T;constructor(e){super(e,_.T),h.RI&&((0,A.u)(()=>(0,s.p)("docHidden",[(0,a.t)()],void 0,_.T,this.ee),!0),(0,A.G)(()=>(0,s.p)("winPagehide",[(0,a.t)()],void 0,_.T,this.ee)),this.importAggregator(e,()=>i.e(478).then(i.bind(i,9917))))}}var O=i(3969);class I extends b{static featureName=O.TZ;constructor(e){super(e,O.TZ),h.RI&&document.addEventListener("securitypolicyviolation",e=>{(0,s.p)(O.xV,["Generic/CSPViolation/Detected"],void 0,this.featureName,this.ee)}),this.importAggregator(e,()=>i.e(478).then(i.bind(i,6555)))}}var N=i(6774),P=i(3878),k=i(3304);class D{constructor(e,t,r,n,i){this.name="UncaughtError",this.message="string"==typeof e?e:(0,k.A)(e),this.sourceURL=t,this.line=r,this.column=n,this.__newrelic=i}}function C(e){return M(e)?e:new D(void 0!==e?.message?e.message:e,e?.filename||e?.sourceURL,e?.lineno||e?.line,e?.colno||e?.col,e?.__newrelic,e?.cause)}function j(e){const t="Unhandled Promise Rejection: ";if(!e?.reason)return;if(M(e.reason)){try{e.reason.message.startsWith(t)||(e.reason.message=t+e.reason.message)}catch(e){}return C(e.reason)}const r=C(e.reason);return(r.message||"").startsWith(t)||(r.message=t+r.message),r}function L(e){if(e.error instanceof SyntaxError&&!/:\d+$/.test(e.error.stack?.trim())){const t=new D(e.message,e.filename,e.lineno,e.colno,e.error.__newrelic,e.cause);return t.name=SyntaxError.name,t}return M(e.error)?e.error:C(e)}function M(e){return e instanceof Error&&!!e.stack}function H(e,r,n,i,o=(0,a.t)()){"string"==typeof e&&(e=new Error(e)),(0,s.p)("err",[e,o,!1,r,n.runtime.isRecording,void 0,i],void 0,t.K7.jserrors,n.ee),(0,s.p)("uaErr",[],void 0,t.K7.genericEvents,n.ee)}var B=i(1541),K=i(993),W=i(3785);function U(e,{customAttributes:t={},level:r=K.p_.INFO}={},n,i,s=(0,a.t)()){(0,W.R)(n.ee,e,t,r,!1,i,s)}function F(e,r,n,i,c=(0,a.t)()){(0,s.p)(o.Pl+o.hG,[c,e,r,i],void 0,t.K7.genericEvents,n.ee)}function V(e,r,n,i,c=(0,a.t)()){const{start:d,end:u,customAttributes:l}=r||{},h={customAttributes:l||{}};if("object"!=typeof h.customAttributes||"string"!=typeof e||0===e.length)return void(0,f.R)(57);const p=(e,t)=>null==e?t:"number"==typeof e?e:e instanceof PerformanceMark?e.startTime:Number.NaN;if(h.start=p(d,0),h.end=p(u,c),Number.isNaN(h.start)||Number.isNaN(h.end))(0,f.R)(57);else{if(h.duration=h.end-h.start,!(h.duration<0))return(0,s.p)(o.Pl+o.V1,[h,e,i],void 0,t.K7.genericEvents,n.ee),h;(0,f.R)(58)}}function G(e,r={},n,i,c=(0,a.t)()){(0,s.p)(o.Pl+o.fF,[c,e,r,i],void 0,t.K7.genericEvents,n.ee)}const z=["name","id","type"];function Y(e){(0,c.Y)(o.eY,function(t){return Z(e,t)},e)}function Z(e,r,n){(0,f.R)(54,"newrelic.register"),r||={},r.type=B.f.MFE,r.licenseKey||=e.info.licenseKey,r.blocked=!1,r.parent=n||{},("object"!=typeof r.tags||null===r.tags||Array.isArray(r.tags))&&(r.tags={});const i={};Object.entries(r.tags).forEach(([e,t])=>{z.includes(e)||(i["source.".concat(e)]=t)}),r.isolated??=!0;let o=()=>{};const c=e.runtime.registeredEntities;if(!r.isolated){const e=c.find(({metadata:{target:{id:e}}})=>e===r.id&&!r.isolated);if(e)return e}const d=e=>{r.blocked=!0,o=e};function u(e){return"string"==typeof e&&!!e.trim()&&e.trim().length<501||"number"==typeof e}e.init.api.allow_registered_children||d((0,m.J)(()=>(0,f.R)(55))),u(r.id)&&u(r.name)||d((0,m.J)(()=>(0,f.R)(48,r)));const l={addPageAction:(t,n={})=>g(F,[t,{...i,...n},e],r),deregister:()=>{d((0,m.J)(()=>(0,f.R)(68)))},log:(t,n={})=>g(U,[t,{...n,customAttributes:{...i,...n.customAttributes||{}}},e],r),measure:(t,n={})=>g(V,[t,{...n,customAttributes:{...i,...n.customAttributes||{}}},e],r),noticeError:(t,n={})=>g(H,[t,{...i,...n},e],r),register:(t={})=>g(Z,[e,t],l.metadata.target),recordCustomEvent:(t,n={})=>g(G,[t,{...i,...n},e],r),setApplicationVersion:e=>p("application.version",e),setCustomAttribute:(e,t)=>p(e,t),setUserId:e=>p("enduser.id",e),metadata:{customAttributes:i,target:r}},h=()=>(r.blocked&&o(),r.blocked);h()||c.push(l);const p=(e,t)=>{h()||(i[e]=t)},g=(r,n,i)=>{if(h()&&r!==Z)return;const o=(0,a.t)();(0,s.p)(O.xV,["API/register/".concat(r.name,"/called")],void 0,t.K7.metrics,e.ee);try{if(e.init.api.duplicate_registered_data&&r!==Z){let e=n;if(n[1]instanceof Object){const t={"child.id":i.id,"child.type":i.type};e="customAttributes"in n[1]?[n[0],{...n[1],customAttributes:{...n[1].customAttributes,...t}},...n.slice(2)]:[n[0],{...n[1],...t},...n.slice(2)]}r(...e,void 0,o)}return r(...n,i,o)}catch(e){(0,f.R)(50,e)}};return l}class q extends b{static featureName=N.T;constructor(e){var t;super(e,N.T),t=e,(0,c.Y)(o.o5,(e,r)=>H(e,r,t),t),function(e){(0,c.Y)(o.bt,function(t){e.runtime.onerror=t},e)}(e),function(e){let t=0;(0,c.Y)(o.k6,function(e,r){++t>10||(this.runtime.releaseIds[e.slice(-200)]=(""+r).slice(-200))},e)}(e),Y(e);try{this.removeOnAbort=new AbortController}catch(e){}this.ee.on("internal-error",(t,r)=>{this.abortHandler&&(0,s.p)("ierr",[C(t),(0,a.t)(),!0,{},e.runtime.isRecording,r],void 0,this.featureName,this.ee)}),h.gm.addEventListener("unhandledrejection",t=>{this.abortHandler&&(0,s.p)("err",[j(t),(0,a.t)(),!1,{unhandledPromiseRejection:1},e.runtime.isRecording],void 0,this.featureName,this.ee)},(0,P.jT)(!1,this.removeOnAbort?.signal)),h.gm.addEventListener("error",t=>{this.abortHandler&&(0,s.p)("err",[L(t),(0,a.t)(),!1,{},e.runtime.isRecording],void 0,this.featureName,this.ee)},(0,P.jT)(!1,this.removeOnAbort?.signal)),this.abortHandler=this.#r,this.importAggregator(e,()=>i.e(478).then(i.bind(i,2176)))}#r(){this.removeOnAbort?.abort(),this.abortHandler=void 0}}var X=i(8990);let J=1;function Q(e){const t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===h.gm?0:(0,X.I)(e,"nr@id",function(){return J++})}function ee(e){if("string"==typeof e&&e.length)return e.length;if("object"==typeof e){if("undefined"!=typeof ArrayBuffer&&e instanceof ArrayBuffer&&e.byteLength)return e.byteLength;if("undefined"!=typeof Blob&&e instanceof Blob&&e.size)return e.size;if(!("undefined"!=typeof FormData&&e instanceof FormData))try{return(0,k.A)(e).length}catch(e){return}}}var te=i(8139),re=i(7836),ne=i(3434);const ie={},se=["open","send"];function ae(e){var t=e||re.ee;const r=function(e){return(e||re.ee).get("xhr")}(t);if(void 0===h.gm.XMLHttpRequest)return r;if(ie[r.debugId]++)return r;ie[r.debugId]=1,(0,te.u)(t);var n=(0,ne.YM)(r),i=h.gm.XMLHttpRequest,s=h.gm.MutationObserver,a=h.gm.Promise,o=h.gm.setInterval,c="readystatechange",d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],u=[],l=h.gm.XMLHttpRequest=function(e){const t=new i(e),s=r.context(t);try{r.emit("new-xhr",[t],s),t.addEventListener(c,(a=s,function(){var e=this;e.readyState>3&&!a.resolved&&(a.resolved=!0,r.emit("xhr-resolved",[],e)),n.inPlace(e,d,"fn-",y)}),(0,P.jT)(!1))}catch(e){(0,f.R)(15,e);try{r.emit("internal-error",[e])}catch(e){}}var a;return t};function p(e,t){n.inPlace(t,["onreadystatechange"],"fn-",y)}if(function(e,t){for(var r in e)t[r]=e[r]}(i,l),l.prototype=i.prototype,n.inPlace(l.prototype,se,"-xhr-",y),r.on("send-xhr-start",function(e,t){p(e,t),function(e){u.push(e),s&&(g?g.then(b):o?o(b):(m=-m,v.data=m))}(t)}),r.on("open-xhr-start",p),s){var g=a&&a.resolve();if(!o&&!a){var m=1,v=document.createTextNode(m);new s(b).observe(v,{characterData:!0})}}else t.on("fn-end",function(e){e[0]&&e[0].type===c||b()});function b(){for(var e=0;e<u.length;e++)p(0,u[e]);u.length&&(u=[])}function y(e,t){return t}return r}var oe="fetch-",ce=oe+"body-",de=["arrayBuffer","blob","json","text","formData"],ue=h.gm.Request,le=h.gm.Response,he="prototype";const fe={};function pe(e){const t=function(e){return(e||re.ee).get("fetch")}(e);if(!(ue&&le&&h.gm.fetch))return t;if(fe[t.debugId]++)return t;function r(e,r,n){var i=e[r];"function"==typeof i&&(e[r]=function(){var e,r=[...arguments],s={};t.emit(n+"before-start",[r],s),s[re.P]&&s[re.P].dt&&(e=s[re.P].dt);var a=i.apply(this,r);return t.emit(n+"start",[r,e],a),a.then(function(e){return t.emit(n+"end",[null,e],a),e},function(e){throw t.emit(n+"end",[e],a),e})})}return fe[t.debugId]=1,de.forEach(e=>{r(ue[he],e,ce),r(le[he],e,ce)}),r(h.gm,"fetch",oe),t.on(oe+"end",function(e,r){var n=this;if(r){var i=r.headers.get("content-length");null!==i&&(n.rxSize=i),t.emit(oe+"done",[null,r],n)}else t.emit(oe+"done",[e],n)}),t}var ge=i(7485),me=i(9566);class ve{constructor(e){this.agentRef=e}generateTracePayload(e){const t=this.agentRef.loader_config;if(!this.shouldGenerateTrace(e)||!t)return null;var r=(t.accountID||"").toString()||null,n=(t.agentID||"").toString()||null,i=(t.trustKey||"").toString()||null;if(!r||!n)return null;var s=(0,me.ZF)(),a=(0,me.el)(),o=Date.now(),c={spanId:s,traceId:a,timestamp:o};return(e.sameOrigin||this.isAllowedOrigin(e)&&this.useTraceContextHeadersForCors())&&(c.traceContextParentHeader=this.generateTraceContextParentHeader(s,a),c.traceContextStateHeader=this.generateTraceContextStateHeader(s,o,r,n,i)),(e.sameOrigin&&!this.excludeNewrelicHeader()||!e.sameOrigin&&this.isAllowedOrigin(e)&&this.useNewrelicHeaderForCors())&&(c.newrelicHeader=this.generateTraceHeader(s,a,o,r,n,i)),c}generateTraceContextParentHeader(e,t){return"00-"+t+"-"+e+"-01"}generateTraceContextStateHeader(e,t,r,n,i){return i+"@nr=0-1-"+r+"-"+n+"-"+e+"----"+t}generateTraceHeader(e,t,r,n,i,s){if(!("function"==typeof h.gm?.btoa))return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:i,id:e,tr:t,ti:r}};return s&&n!==s&&(a.d.tk=s),btoa((0,k.A)(a))}shouldGenerateTrace(e){return this.agentRef.init?.distributed_tracing?.enabled&&this.isAllowedOrigin(e)}isAllowedOrigin(e){var t=!1;const r=this.agentRef.init?.distributed_tracing;if(e.sameOrigin)t=!0;else if(r?.allowed_origins instanceof Array)for(var n=0;n<r.allowed_origins.length;n++){var i=(0,ge.D)(r.allowed_origins[n]);if(e.hostname===i.hostname&&e.protocol===i.protocol&&e.port===i.port){t=!0;break}}return t}excludeNewrelicHeader(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!!e.exclude_newrelic_header}useNewrelicHeaderForCors(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!1!==e.cors_use_newrelic_header}useTraceContextHeadersForCors(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!!e.cors_use_tracecontext_headers}}var be=i(9300),ye=i(7295);function we(e){return"string"==typeof e?e:e instanceof(0,T.dV)().o.REQ?e.url:h.gm?.URL&&e instanceof URL?e.href:void 0}var Re=["load","error","abort","timeout"],xe=Re.length,Te=(0,T.dV)().o.REQ,Ee=(0,T.dV)().o.XHR;const Ae="X-NewRelic-App-Data";class _e extends b{static featureName=be.T;constructor(e){super(e,be.T),this.dt=new ve(e),this.handler=(e,t,r,n)=>(0,s.p)(e,t,r,n,this.ee);try{const e={xmlhttprequest:"xhr",fetch:"fetch",beacon:"beacon"};h.gm?.performance?.getEntriesByType("resource").forEach(r=>{if(r.initiatorType in e&&0!==r.responseStatus){const n={status:r.responseStatus},i={rxSize:r.transferSize,duration:Math.floor(r.duration),cbTime:0};Se(n,r.name),this.handler("xhr",[n,i,r.startTime,r.responseEnd,e[r.initiatorType]],void 0,t.K7.ajax)}})}catch(e){}pe(this.ee),ae(this.ee),function(e,r,n,i){function o(e){var t=this;t.totalCbs=0,t.called=0,t.cbTime=0,t.end=T,t.ended=!1,t.xhrGuids={},t.lastSize=null,t.loadCaptureCalled=!1,t.params=this.params||{},t.metrics=this.metrics||{},t.latestLongtaskEnd=0,e.addEventListener("load",function(r){E(t,e)},(0,P.jT)(!1)),h.lR||e.addEventListener("progress",function(e){t.lastSize=e.loaded},(0,P.jT)(!1))}function c(e){this.params={method:e[0]},Se(this,e[1]),this.metrics={}}function d(t,r){e.loader_config.xpid&&this.sameOrigin&&r.setRequestHeader("X-NewRelic-ID",e.loader_config.xpid);var n=i.generateTracePayload(this.parsedOrigin);if(n){var s=!1;n.newrelicHeader&&(r.setRequestHeader("newrelic",n.newrelicHeader),s=!0),n.traceContextParentHeader&&(r.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&r.setRequestHeader("tracestate",n.traceContextStateHeader),s=!0),s&&(this.dt=n)}}function u(e,t){var n=this.metrics,i=e[0],s=this;if(n&&i){var o=ee(i);o&&(n.txSize=o)}this.startTime=(0,a.t)(),this.body=i,this.listener=function(e){try{"abort"!==e.type||s.loadCaptureCalled||(s.params.aborted=!0),("load"!==e.type||s.called===s.totalCbs&&(s.onloadCalled||"function"!=typeof t.onload)&&"function"==typeof s.end)&&s.end(t)}catch(e){try{r.emit("internal-error",[e])}catch(e){}}};for(var c=0;c<xe;c++)t.addEventListener(Re[c],this.listener,(0,P.jT)(!1))}function l(e,t,r){this.cbTime+=e,t?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof r.onload||"function"!=typeof this.end||this.end(r)}function f(e,t){var r=""+Q(e)+!!t;this.xhrGuids&&!this.xhrGuids[r]&&(this.xhrGuids[r]=!0,this.totalCbs+=1)}function p(e,t){var r=""+Q(e)+!!t;this.xhrGuids&&this.xhrGuids[r]&&(delete this.xhrGuids[r],this.totalCbs-=1)}function g(){this.endTime=(0,a.t)()}function m(e,t){t instanceof Ee&&"load"===e[0]&&r.emit("xhr-load-added",[e[1],e[2]],t)}function v(e,t){t instanceof Ee&&"load"===e[0]&&r.emit("xhr-load-removed",[e[1],e[2]],t)}function b(e,t,r){t instanceof Ee&&("onload"===r&&(this.onload=!0),("load"===(e[0]&&e[0].type)||this.onload)&&(this.xhrCbStart=(0,a.t)()))}function y(e,t){this.xhrCbStart&&r.emit("xhr-cb-time",[(0,a.t)()-this.xhrCbStart,this.onload,t],t)}function w(e){var t,r=e[1]||{};if("string"==typeof e[0]?0===(t=e[0]).length&&h.RI&&(t=""+h.gm.location.href):e[0]&&e[0].url?t=e[0].url:h.gm?.URL&&e[0]&&e[0]instanceof URL?t=e[0].href:"function"==typeof e[0].toString&&(t=e[0].toString()),"string"==typeof t&&0!==t.length){t&&(this.parsedOrigin=(0,ge.D)(t),this.sameOrigin=this.parsedOrigin.sameOrigin);var n=i.generateTracePayload(this.parsedOrigin);if(n&&(n.newrelicHeader||n.traceContextParentHeader))if(e[0]&&e[0].headers)o(e[0].headers,n)&&(this.dt=n);else{var s={};for(var a in r)s[a]=r[a];s.headers=new Headers(r.headers||{}),o(s.headers,n)&&(this.dt=n),e.length>1?e[1]=s:e.push(s)}}function o(e,t){var r=!1;return t.newrelicHeader&&(e.set("newrelic",t.newrelicHeader),r=!0),t.traceContextParentHeader&&(e.set("traceparent",t.traceContextParentHeader),t.traceContextStateHeader&&e.set("tracestate",t.traceContextStateHeader),r=!0),r}}function R(e,t){this.params={},this.metrics={},this.startTime=(0,a.t)(),this.dt=t,e.length>=1&&(this.target=e[0]),e.length>=2&&(this.opts=e[1]);var r=this.opts||{},n=this.target;Se(this,we(n));var i=(""+(n&&n instanceof Te&&n.method||r.method||"GET")).toUpperCase();this.params.method=i,this.body=r.body,this.txSize=ee(r.body)||0}function x(e,r){if(this.endTime=(0,a.t)(),this.params||(this.params={}),(0,ye.iW)(this.params))return;let i;this.params.status=r?r.status:0,"string"==typeof this.rxSize&&this.rxSize.length>0&&(i=+this.rxSize);const s={txSize:this.txSize,rxSize:i,duration:(0,a.t)()-this.startTime};n("xhr",[this.params,s,this.startTime,this.endTime,"fetch"],this,t.K7.ajax)}function T(e){const r=this.params,i=this.metrics;if(!this.ended){this.ended=!0;for(let t=0;t<xe;t++)e.removeEventListener(Re[t],this.listener,!1);r.aborted||(0,ye.iW)(r)||(i.duration=(0,a.t)()-this.startTime,this.loadCaptureCalled||4!==e.readyState?null==r.status&&(r.status=0):E(this,e),i.cbTime=this.cbTime,n("xhr",[r,i,this.startTime,this.endTime,"xhr"],this,t.K7.ajax))}}function E(e,n){e.params.status=n.status;var i=function(e,t){var r=e.responseType;return"json"===r&&null!==t?t:"arraybuffer"===r||"blob"===r||"json"===r?ee(e.response):"text"===r||""===r||void 0===r?ee(e.responseText):void 0}(n,e.lastSize);if(i&&(e.metrics.rxSize=i),e.sameOrigin&&n.getAllResponseHeaders().indexOf(Ae)>=0){var a=n.getResponseHeader(Ae);a&&((0,s.p)(O.rs,["Ajax/CrossApplicationTracing/Header/Seen"],void 0,t.K7.metrics,r),e.params.cat=a.split(", ").pop())}e.loadCaptureCalled=!0}r.on("new-xhr",o),r.on("open-xhr-start",c),r.on("open-xhr-end",d),r.on("send-xhr-start",u),r.on("xhr-cb-time",l),r.on("xhr-load-added",f),r.on("xhr-load-removed",p),r.on("xhr-resolved",g),r.on("addEventListener-end",m),r.on("removeEventListener-end",v),r.on("fn-end",y),r.on("fetch-before-start",w),r.on("fetch-start",R),r.on("fn-start",b),r.on("fetch-done",x)}(e,this.ee,this.handler,this.dt),this.importAggregator(e,()=>i.e(478).then(i.bind(i,3845)))}}function Se(e,t){var r=(0,ge.D)(t),n=e.params||e;n.hostname=r.hostname,n.port=r.port,n.protocol=r.protocol,n.host=r.hostname+":"+r.port,n.pathname=r.pathname,e.parsedOrigin=r,e.sameOrigin=r.sameOrigin}const Oe={},Ie=["pushState","replaceState"];function Ne(e){const t=function(e){return(e||re.ee).get("history")}(e);return!h.RI||Oe[t.debugId]++||(Oe[t.debugId]=1,(0,ne.YM)(t).inPlace(window.history,Ie,"-")),t}var Pe=i(3738);function ke(e){(0,c.Y)(o.BL,function(r=Date.now()){const n=r-h.WN;n<0&&(0,f.R)(62,r),(0,s.p)(O.XG,[o.BL,{time:n}],void 0,t.K7.metrics,e.ee),e.addToTrace({name:o.BL,start:r,origin:"nr"}),(0,s.p)(o.Pl+o.hG,[n,o.BL],void 0,t.K7.genericEvents,e.ee)},e)}const{He:De,bD:Ce,d3:je,Kp:Le,TZ:Me,Lc:He,uP:Be,Rz:Ke}=Pe;class We extends b{static featureName=Me;constructor(e){var r;super(e,Me),r=e,(0,c.Y)(o.U2,function(e){if(!(e&&"object"==typeof e&&e.name&&e.start))return;const n={n:e.name,s:e.start-h.WN,e:(e.end||e.start)-h.WN,o:e.origin||"",t:"api"};n.s<0||n.e<0||n.e<n.s?(0,f.R)(61,{start:n.s,end:n.e}):(0,s.p)("bstApi",[n],void 0,t.K7.sessionTrace,r.ee)},r),ke(e);if(!(0,g.V)(e.init))return void this.deregisterDrain();const n=this.ee;let d;Ne(n),this.eventsEE=(0,te.u)(n),this.eventsEE.on(Be,function(e,t){this.bstStart=(0,a.t)()}),this.eventsEE.on(He,function(e,r){(0,s.p)("bst",[e[0],r,this.bstStart,(0,a.t)()],void 0,t.K7.sessionTrace,n)}),n.on(Ke+je,function(e){this.time=(0,a.t)(),this.startPath=location.pathname+location.hash}),n.on(Ke+Le,function(e){(0,s.p)("bstHist",[location.pathname+location.hash,this.startPath,this.time],void 0,t.K7.sessionTrace,n)});try{d=new PerformanceObserver(e=>{const r=e.getEntries();(0,s.p)(De,[r],void 0,t.K7.sessionTrace,n)}),d.observe({type:Ce,buffered:!0})}catch(e){}this.importAggregator(e,()=>i.e(478).then(i.bind(i,6974)),{resourceObserver:d})}}var Ue=i(6344);class Fe extends b{static featureName=Ue.TZ;#n;recorder;constructor(e){var r;let n;super(e,Ue.TZ),r=e,(0,c.Y)(o.CH,function(){(0,s.p)(o.CH,[],void 0,t.K7.sessionReplay,r.ee)},r),function(e){(0,c.Y)(o.Tb,function(){(0,s.p)(o.Tb,[],void 0,t.K7.sessionReplay,e.ee)},e)}(e);try{n=JSON.parse(localStorage.getItem("".concat(w.H3,"_").concat(w.uh)))}catch(e){}(0,p.SR)(e.init)&&this.ee.on(o.CH,()=>this.#i()),this.#s(n)&&this.importRecorder().then(e=>{e.startRecording(Ue.Qb.PRELOAD,n?.sessionReplayMode)}),this.importAggregator(this.agentRef,()=>i.e(478).then(i.bind(i,6167)),this),this.ee.on("err",e=>{this.blocked||this.agentRef.runtime.isRecording&&(this.errorNoticed=!0,(0,s.p)(Ue.Vh,[e],void 0,this.featureName,this.ee))})}#s(e){return e&&(e.sessionReplayMode===w.g.FULL||e.sessionReplayMode===w.g.ERROR)||(0,p.Aw)(this.agentRef.init)}importRecorder(){return this.recorder?Promise.resolve(this.recorder):(this.#n??=Promise.all([i.e(478),i.e(249)]).then(i.bind(i,4866)).then(({Recorder:e})=>(this.recorder=new e(this),this.recorder)).catch(e=>{throw this.ee.emit("internal-error",[e]),this.blocked=!0,e}),this.#n)}#i(){this.blocked||(this.featAggregate?this.featAggregate.mode!==w.g.FULL&&this.featAggregate.initializeRecording(w.g.FULL,!0,Ue.Qb.API):this.importRecorder().then(()=>{this.recorder.startRecording(Ue.Qb.API,w.g.FULL)}))}}var Ve=i(3962);class Ge extends b{static featureName=Ve.TZ;constructor(e){if(super(e,Ve.TZ),function(e){const r=e.ee.get("tracer");function n(){}(0,c.Y)(o.dT,function(e){return(new n).get("object"==typeof e?e:{})},e);const i=n.prototype={createTracer:function(n,i){var o={},c=this,d="function"==typeof i;return(0,s.p)(O.xV,["API/createTracer/called"],void 0,t.K7.metrics,e.ee),function(){if(r.emit((d?"":"no-")+"fn-start",[(0,a.t)(),c,d],o),d)try{return i.apply(this,arguments)}catch(e){const t="string"==typeof e?new Error(e):e;throw r.emit("fn-err",[arguments,this,t],o),t}finally{r.emit("fn-end",[(0,a.t)()],o)}}}};["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach(r=>{c.Y.apply(this,[r,function(){return(0,s.p)(o.hw+r,[performance.now(),...arguments],this,t.K7.softNav,e.ee),this},e,i])}),(0,c.Y)(o.PA,function(){(0,s.p)(o.hw+"routeName",[performance.now(),...arguments],void 0,t.K7.softNav,e.ee)},e)}(e),!h.RI||!(0,T.dV)().o.MO)return;const r=Ne(this.ee);try{this.removeOnAbort=new AbortController}catch(e){}Ve.tC.forEach(e=>{(0,P.sp)(e,e=>{l(e)},!0,this.removeOnAbort?.signal)});const n=()=>(0,s.p)("newURL",[(0,a.t)(),""+window.location],void 0,this.featureName,this.ee);r.on("pushState-end",n),r.on("replaceState-end",n),(0,P.sp)(Ve.OV,e=>{l(e),(0,s.p)("newURL",[e.timeStamp,""+window.location],void 0,this.featureName,this.ee)},!0,this.removeOnAbort?.signal);let d=!1;const u=new((0,T.dV)().o.MO)((e,t)=>{d||(d=!0,requestAnimationFrame(()=>{(0,s.p)("newDom",[(0,a.t)()],void 0,this.featureName,this.ee),d=!1}))}),l=(0,m.s)(e=>{"loading"!==document.readyState&&((0,s.p)("newUIEvent",[e],void 0,this.featureName,this.ee),u.observe(document.body,{attributes:!0,childList:!0,subtree:!0,characterData:!0}))},100,{leading:!0});this.abortHandler=function(){this.removeOnAbort?.abort(),u.disconnect(),this.abortHandler=void 0},this.importAggregator(e,()=>i.e(478).then(i.bind(i,4393)),{domObserver:u})}}var ze=i(3333),Ye=i(9119);const Ze={},qe=new Set;function Xe(e){return"string"==typeof e?{type:"string",size:(new TextEncoder).encode(e).length}:e instanceof ArrayBuffer?{type:"ArrayBuffer",size:e.byteLength}:e instanceof Blob?{type:"Blob",size:e.size}:e instanceof DataView?{type:"DataView",size:e.byteLength}:ArrayBuffer.isView(e)?{type:"TypedArray",size:e.byteLength}:{type:"unknown",size:0}}class $e{constructor(e,t){this.timestamp=(0,a.t)(),this.currentUrl=(0,Ye.L)(window.location.href),this.socketId=(0,me.LA)(8),this.requestedUrl=(0,Ye.L)(e),this.requestedProtocols=Array.isArray(t)?t.join(","):t||"",this.openedAt=void 0,this.protocol=void 0,this.extensions=void 0,this.binaryType=void 0,this.messageOrigin=void 0,this.messageCount=0,this.messageBytes=0,this.messageBytesMin=0,this.messageBytesMax=0,this.messageTypes=void 0,this.sendCount=0,this.sendBytes=0,this.sendBytesMin=0,this.sendBytesMax=0,this.sendTypes=void 0,this.closedAt=void 0,this.closeCode=void 0,this.closeReason="unknown",this.closeWasClean=void 0,this.connectedDuration=0,this.hasErrors=void 0}}class Je extends b{static featureName=ze.TZ;constructor(e){super(e,ze.TZ);const r=e.init.feature_flags.includes("websockets"),n=[e.init.page_action.enabled,e.init.performance.capture_marks,e.init.performance.capture_measures,e.init.performance.resources.enabled,e.init.user_actions.enabled,r];var d;let u,l;if(d=e,(0,c.Y)(o.hG,(e,t)=>F(e,t,d),d),function(e){(0,c.Y)(o.fF,(t,r)=>G(t,r,e),e)}(e),ke(e),Y(e),function(e){(0,c.Y)(o.V1,(t,r)=>V(t,r,e),e)}(e),r&&(l=function(e){if(!(0,T.dV)().o.WS)return e;const t=e.get("websockets");if(Ze[t.debugId]++)return t;Ze[t.debugId]=1,(0,A.G)(()=>{const e=(0,a.t)();qe.forEach(r=>{r.nrData.closedAt=e,r.nrData.closeCode=1001,r.nrData.closeReason="Page navigating away",r.nrData.closeWasClean=!1,r.nrData.openedAt&&(r.nrData.connectedDuration=e-r.nrData.openedAt),t.emit("ws",[r.nrData],r)})});class r extends WebSocket{static name="WebSocket";static toString(){return"function WebSocket() { [native code] }"}toString(){return"[object WebSocket]"}get[Symbol.toStringTag](){return r.name}#a(e){(e.__newrelic??={}).socketId=this.nrData.socketId,this.nrData.hasErrors??=!0}constructor(...e){super(...e),this.nrData=new $e(e[0],e[1]),this.addEventListener("open",()=>{this.nrData.openedAt=(0,a.t)(),["protocol","extensions","binaryType"].forEach(e=>{this.nrData[e]=this[e]}),qe.add(this)}),this.addEventListener("message",e=>{const{type:t,size:r}=Xe(e.data);this.nrData.messageOrigin??=(0,Ye.L)(e.origin),this.nrData.messageCount++,this.nrData.messageBytes+=r,this.nrData.messageBytesMin=Math.min(this.nrData.messageBytesMin||1/0,r),this.nrData.messageBytesMax=Math.max(this.nrData.messageBytesMax,r),(this.nrData.messageTypes??"").includes(t)||(this.nrData.messageTypes=this.nrData.messageTypes?"".concat(this.nrData.messageTypes,",").concat(t):t)}),this.addEventListener("close",e=>{this.nrData.closedAt=(0,a.t)(),this.nrData.closeCode=e.code,e.reason&&(this.nrData.closeReason=e.reason),this.nrData.closeWasClean=e.wasClean,this.nrData.connectedDuration=this.nrData.closedAt-this.nrData.openedAt,qe.delete(this),t.emit("ws",[this.nrData],this)})}addEventListener(e,t,...r){const n=this,i="function"==typeof t?function(...e){try{return t.apply(this,e)}catch(e){throw n.#a(e),e}}:t?.handleEvent?{handleEvent:function(...e){try{return t.handleEvent.apply(t,e)}catch(e){throw n.#a(e),e}}}:t;return super.addEventListener(e,i,...r)}send(e){if(this.readyState===WebSocket.OPEN){const{type:t,size:r}=Xe(e);this.nrData.sendCount++,this.nrData.sendBytes+=r,this.nrData.sendBytesMin=Math.min(this.nrData.sendBytesMin||1/0,r),this.nrData.sendBytesMax=Math.max(this.nrData.sendBytesMax,r),(this.nrData.sendTypes??"").includes(t)||(this.nrData.sendTypes=this.nrData.sendTypes?"".concat(this.nrData.sendTypes,",").concat(t):t)}try{return super.send(e)}catch(e){throw this.#a(e),e}}close(...e){try{super.close(...e)}catch(e){throw this.#a(e),e}}}return h.gm.WebSocket=r,t}(this.ee)),h.RI){if(pe(this.ee),ae(this.ee),u=Ne(this.ee),e.init.user_actions.enabled){function f(t){const r=(0,ge.D)(t);return e.beacons.includes(r.hostname+":"+r.port)}function p(){u.emit("navChange")}ze.Zp.forEach(e=>(0,P.sp)(e,e=>(0,s.p)("ua",[e],void 0,this.featureName,this.ee),!0)),ze.qN.forEach(e=>{const t=(0,m.s)(e=>{(0,s.p)("ua",[e],void 0,this.featureName,this.ee)},500,{leading:!0});(0,P.sp)(e,t)}),h.gm.addEventListener("error",()=>{(0,s.p)("uaErr",[],void 0,t.K7.genericEvents,this.ee)},(0,P.jT)(!1,this.removeOnAbort?.signal)),this.ee.on("open-xhr-start",(e,r)=>{f(e[1])||r.addEventListener("readystatechange",()=>{2===r.readyState&&(0,s.p)("uaXhr",[],void 0,t.K7.genericEvents,this.ee)})}),this.ee.on("fetch-start",e=>{e.length>=1&&!f(we(e[0]))&&(0,s.p)("uaXhr",[],void 0,t.K7.genericEvents,this.ee)}),u.on("pushState-end",p),u.on("replaceState-end",p),window.addEventListener("hashchange",p,(0,P.jT)(!0,this.removeOnAbort?.signal)),window.addEventListener("popstate",p,(0,P.jT)(!0,this.removeOnAbort?.signal))}if(e.init.performance.resources.enabled&&h.gm.PerformanceObserver?.supportedEntryTypes.includes("resource")){new PerformanceObserver(e=>{e.getEntries().forEach(e=>{(0,s.p)("browserPerformance.resource",[e],void 0,this.featureName,this.ee)})}).observe({type:"resource",buffered:!0})}}r&&l.on("ws",e=>{(0,s.p)("ws-complete",[e],void 0,this.featureName,this.ee)});try{this.removeOnAbort=new AbortController}catch(g){}this.abortHandler=()=>{this.removeOnAbort?.abort(),this.abortHandler=void 0},n.some(e=>e)?this.importAggregator(e,()=>i.e(478).then(i.bind(i,8019))):this.deregisterDrain()}}var Qe=i(2646);const et=new Map;function tt(e,t,r,n,i=!0){if("object"!=typeof t||!t||"string"!=typeof r||!r||"function"!=typeof t[r])return(0,f.R)(29);const s=function(e){return(e||re.ee).get("logger")}(e),a=(0,ne.YM)(s),o=new Qe.y(re.P);o.level=n.level,o.customAttributes=n.customAttributes,o.autoCaptured=i;const c=t[r]?.[ne.Jt]||t[r];return et.set(c,o),a.inPlace(t,[r],"wrap-logger-",()=>et.get(c)),s}var rt=i(1910);class nt extends b{static featureName=K.TZ;constructor(e){var t;super(e,K.TZ),t=e,(0,c.Y)(o.$9,(e,r)=>U(e,r,t),t),function(e){(0,c.Y)(o.Wb,(t,r,{customAttributes:n={},level:i=K.p_.INFO}={})=>{tt(e.ee,t,r,{customAttributes:n,level:i},!1)},e)}(e),Y(e);const r=this.ee;["log","error","warn","info","debug","trace"].forEach(e=>{(0,rt.i)(h.gm.console[e]),tt(r,h.gm.console,e,{level:"log"===e?"info":e})}),this.ee.on("wrap-logger-end",function([e]){const{level:t,customAttributes:n,autoCaptured:i}=this;(0,W.R)(r,e,n,t,i)}),this.importAggregator(e,()=>i.e(478).then(i.bind(i,5288)))}}new E({features:[_e,x,S,We,Fe,I,q,Je,nt,Ge],loaderType:"spa"})})()})();</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="#">
+	<title>NBA Social Impact Programs &#8211; Inspire and Connect People Everywhere Through The Power of Basketball</title>
+<meta name='robots' content='noindex, nofollow' />
+	<style>
+		.site-header{--tw-bg-opacity:0.1;background-color:rgb(255 255 255/var(--tw-bg-opacity));padding-bottom:.75rem}.site-header>.container{display:flex;justify-content:flex-end;margin-bottom:0;margin-top:0;max-width:none;padding:1rem 2rem}@media (min-width:1200px){.site-header>.container{justify-content:space-between;padding-bottom:0}}.site-header #primary-menu{margin-bottom:0}.site-header #primary-menu a{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity));font-family:KnockoutW05-49Liteweight,sans-serif;font-size:1.25rem;text-transform:uppercase}.navigation-menu{display:none}@media (min-width:1200px){.navigation-menu{display:block}}.navigation-menu .menu{display:flex}.navigation-menu .menu>li:not(:last-child){margin-right:1.25rem}.navigation-menu .sub-menu{--tw-bg-opacity:1;--tw-shadow:0 0.25rem 0.375rem -0.0625rem rgba(0,0,0,.1),0 0.125rem 0.25rem -0.0625rem rgba(0,0,0,.06);--tw-shadow-colored:0 0.25rem 0.375rem -0.0625rem var(--tw-shadow-color),0 0.125rem 0.25rem -0.0625rem var(--tw-shadow-color);background-color:rgb(255 255 255/var(--tw-bg-opacity));box-shadow:0 0 #0000,0 0 #0000,var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);left:-999em;padding-bottom:.5rem;padding-top:.5rem;position:absolute;top:1.5rem;z-index:99999}.navigation-menu .sub-menu li{padding:.5rem 1.5rem}.navigation-menu .sub-menu .menu-item-has-children.focus>.sub-menu,.navigation-menu .sub-menu .menu-item-has-children:hover>.sub-menu{left:100%}.menu-item-has-children{position:relative}.menu-item-has-children.focus>.sub-menu,.menu-item-has-children:hover>.sub-menu{left:0}.dropdown ul li{width:100%}.dropdown ul a{display:block;min-width:12rem;width:100%}.caret-down{background:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTYgMTFhLjk5Ljk5IDAgMCAxLS4yOTcuNzAzbC03IDdDOC41MTYgMTguODkgOC4yNjUgMTkgOCAxOXMtLjUxNi0uMTA5LS43MDMtLjI5N2wtNy03QS45OTYuOTk2IDAgMCAxIDAgMTFjMC0uNTQ3LjQ1My0xIDEtMWgxNGMuNTQ3IDAgMSAuNDUzIDEgMXoiLz48L3N2Zz4=) 50% 50% no-repeat;background-size:100%;float:right;height:100%;margin-left:.5rem;width:.5rem}.caret-down,.footer-navigation .menu{display:block}@media (min-width:900px){.footer-navigation .menu{display:flex}}.mobile-menu{list-style-type:none}.mobile-menu li{margin-bottom:.5rem}.mobile-menu li a{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity));font-family:KnockoutW05-49Liteweight,sans-serif;font-size:1.25rem;-webkit-text-decoration-line:none;text-decoration-line:none;text-transform:uppercase}.mobile-menu .sub-menu{display:none;margin-bottom:0;margin-left:1rem;margin-top:.5rem}.mobile-menu .sub-menu.is-visible{display:block;opacity:1;visibility:visible}.mobile-menu .menu-item-has-children.is-visible{max-height:8000px}.mobile-menu .menu-item-has-children.is-visible .parent-indicator{--tw-rotate:180deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.mobile-menu .menu-item-has-children .menu-item-has-children:last-of-type .menu-item-has-children.is-visible{margin-bottom:0}.mobile-menu .menu-item-has-children .menu-item-has-children .parent-indicator{--tw-rotate:0deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.mobile-menu .menu-item-has-children .menu-item-has-children.is-visible:last-of-type{margin-bottom:0}.mobile-menu .menu-item-has-children .menu-item-has-children.is-visible .parent-indicator{--tw-rotate:180deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.mobile-menu .menu-item-has-children .menu-item-has-children .menu-item-has-children .parent-indicator{--tw-rotate:0deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.mobile-menu .menu-item-has-children .menu-item-has-children .menu-item-has-children.is-visible .parent-indicator{--tw-rotate:180deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.mobile-menu .parent-indicator{display:inline-block;float:none;height:1rem;position:relative;top:-4px;width:1rem}	</style>
+				<link rel="preload" href="https://ak-static.cms.nba.com/wp-content/themes/nba-social-hub/build/index.css?ver=1.0.0" as="style">
+	<link rel="preload" href="https://ak-static.cms.nba.com/wp-content/themes/nba-social-hub/build/index.js?ver=1.0.0" as="script">
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link rel='dns-prefetch' href='http://ak-static.cms.nba.com/' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel="alternate" type="application/rss+xml" title="NBA Social Impact Programs &raquo; Feed" href="https://socialimpact.nba.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="NBA Social Impact Programs &raquo; Comments Feed" href="https://socialimpact.nba.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="NBA Social Impact Programs &raquo; Social Impact Comments Feed" href="https://socialimpact.nba.com/social-impact/feed/" />
+<link rel='stylesheet' id='wp-block-library-css' href='https://ak-static.cms.nba.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.8' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://ak-static.cms.nba.com/wp-includes/css/classic-themes.min.css?ver=6.2.8' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 16px;--wp--preset--font-size--huge: 50px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='nba-social-hub-styles-css' href='https://ak-static.cms.nba.com/wp-content/themes/nba-social-hub/build/index.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='roboto-fonts-css' href='https://fonts.googleapis.com/css2?family=Roboto%3Awght%40400%3B700&amp;display=swap&amp;ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='video-js-css' href='https://ak-static.cms.nba.com/wp-content/plugins/video-embed-thumbnail-generator/video-js/video-js.css?ver=4.12.7' type='text/css' media='all' />
+<link rel='stylesheet' id='video-js-kg-skin-css' href='https://ak-static.cms.nba.com/wp-content/plugins/video-embed-thumbnail-generator/video-js/kg-video-js-skin.css?ver=4.501' type='text/css' media='all' />
+<link rel='stylesheet' id='kgvid_video_styles-css' href='https://ak-static.cms.nba.com/wp-content/plugins/video-embed-thumbnail-generator/css/kgvid_styles.css?ver=4.501' type='text/css' media='all' />
+
+<link rel="canonical" href="https://socialimpact.nba.com/" />
+<link rel='shortlink' href='https://socialimpact.nba.com/' />
+	<style>
+		div#ccpaFooter {
+				position: initial !important;
+						}
+	</style>
+	<meta property="og:title" content="Social Impact - NBA Social Impact Programs" />
+	<meta property="og:description" content="Inspire and Connect People Everywhere Through The Power of Basketball" />
+	<meta property="og:url" content="https://socialimpact.nba.com" />
+			<meta property="og:image" content="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2023/02/NBA-Social-Impact.png" />
+		<meta property="og:site_name" content="NBA Social Impact Programs" />
+	<meta property="og:type" content="website" />
+	<meta name="description" content="Inspire and Connect People Everywhere Through The Power of Basketball" />
+	<script type="text/javascript">document.createElement('video');document.createElement('audio');</script>
+<!-- nba header / footer -->
+<script async src="https://www.nba.com/include/nav-footer.js"></script>
+
+<script>
+var digitalData = {
+	page: {
+		pageInfo: {
+			pageName: "nba:social-impact:main",
+			siteSection: "nba:social-impact"
+		} 
+	},  
+	site: {
+		productName: "nba:web",
+		league: "nba"
+	},
+	user: {}
+};
+</script>
+</head>
+
+<body class="home page-template-default page page-id-2 wp-embed-responsive site-wrapper page-socialimpact.nba.com no-js">
+	<div data-esi="true" style="display: none;">
+	
+	  
+		
+		
+	  
+	
+	  
+		
+	  
+	
+		
+	  
+	
+	  
+		
+	  
+	
+		<script>
+		var _esi = {
+			country: "PH",
+			tz: "GMT+8",
+			region: "00",
+			browser: "MOZILLA",
+			os: "WIN",
+			device: "computer",
+			isMobile: "false",
+			isDomestic: "false"
+		};
+		</script>
+	
+	</div>
+
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+	<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+	<header class="site-header">
+	<div id="nba-nav"></div>
+
+		<div class="container">
+
+							<button type="button" class="off-canvas-open" aria-expanded="false" aria-label="Open Menu"></button>
+			
+		</div><!-- .container -->
+
+		<nav id="site-navigation" class="main-navigation navigation-menu" aria-label="Main Navigation">
+			<ul id="primary-menu" class="menu dropdown container"><li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="#programs">Our Programs in Action</a></li>
+<li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="#report">Social Impact Report</a></li>
+<li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="#faq">FAQ</a></li>
+</ul>		</nav><!-- #site-navigation-->
+
+	</header><!-- .site-header-->
+
+	<main id="main" class="container site-main">
+
+		
+<article class="post-container post-2 page type-page status-publish has-post-thumbnail hentry">
+
+	<div class="entry-content">
+		
+	<div
+		class="block-hero block-hero-height-short"
+		style="background-color: #1d428a"
+			>
+		<div class="container" style="
+		background-image: url(https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2022/10/header-overlay.png)		">
+			<h1>Social Impact</h1>
+		</div>
+	</div> <!-- .block-generic-content -->
+
+
+
+<section
+	class="nba-social-hub-block nba-social-hub-block-logo-train"
+			style="background-color: #F5F5F5"
+		>
+	
+		<div class="nba-social-hub-block-logo-train-logos container">
+		
+				<a
+					class="nba-social-hub-block-logo-train-logo-item"
+					href="http://cares.nba.com/"
+					target="_blank"
+				>
+
+				
+					<img width="250" height="110"
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2024/10/nba-cares-social-impact-hub-2-e1730310076404.png"
+												class = "wp-image-461"
+					>
+					
+				</a>
+
+						
+				<a
+					class="nba-social-hub-block-logo-train-logo-item"
+					href="http://nbafoundation.nba.com/"
+					target="_blank"
+				>
+
+				
+					<img width="250" height="110"
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2024/10/nba-foundation-social-impact-hub.png"
+												class = "wp-image-462"
+					>
+					
+				</a>
+
+						
+				<a
+					class="nba-social-hub-block-logo-train-logo-item"
+					href="http://coalition.nba.com/"
+					target="_blank"
+				>
+
+				
+					<img width="123" height="74"
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2022/10/NBSJC.png"
+												class = "wp-image-14"
+					>
+					
+				</a>
+
+						
+				<a
+					class="nba-social-hub-block-logo-train-logo-item"
+					href="http://inclusion.nba.com/"
+					target="_blank"
+				>
+
+				
+					<img width="219" height="74"
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2022/10/NBADandI.png"
+												class = "wp-image-11"
+					>
+					
+				</a>
+
+						
+				<a
+					class="nba-social-hub-block-logo-train-logo-item"
+					href="http://www.nba.com/hbcus"
+					target="_blank"
+				>
+
+				
+					<img width="211" height="46"
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2022/10/NBAxHBCU_Uniform_Mark_rgb-1.png"
+												class = "wp-image-13"
+					>
+					
+				</a>
+
+								</div>
+
+	</section>
+
+
+
+<div
+	class="block-generic-content"
+	id=mission>
+
+	<h2>NBA Mission: Inspire and Connect People Everywhere Through The Power of Basketball</h2>
+<p style="text-align: justify"><span style="font-size: 14pt">As part of the NBA&#8217;s mission we will continue to use our influence to impact a wide range of issues, including equality, health and wellness, education, environmental responsibility and sustainability, and diversity and inclusion. Our work in these areas all fall within the below programs and initiatives.</span></p>
+<h2>NBA CARES</h2>
+<p style="text-align: justify"><span style="font-size: 14pt">NBA Social Responsibility drives change on issues facing fans and communities by advancing needed resources and proven partners through NBA Cares, the league&#8217;s goal social responsibility platform.</span></p>
+<h2>NBA FOUNDATION</h2>
+<p style="text-align: justify"><span style="font-size: 14pt">Established in August 2020, the NBA Foundation is the league’s first-ever charitable foundation dedicated to driving economic opportunity for under-resourced youth in NBA markets across the United States and Canada. The Foundation invests in local and national organizations that promote school-to-career and workforce development opportunities. To date, it has provided more than $140 million in grant support to 260+ nonprofit organizations impacting 500,000 youth in all 28 NBA markets.</span></p>
+<h2>National Basketball Social Justice Coalition</h2>
+<p style="text-align: justify"><span style="font-size: 14pt">The National Basketball Social Justice Coalition is a 501(c)(4) advocacy organization that leads the NBA family’s efforts to advance social justice. Formed jointly by the NBA, NBPA, and NBCA in 2020, the Coalition leverages the game of basketball’s influence to <strong>promote policy</strong>, <strong>build strategic partnerships</strong>, and <strong>empower action </strong>in NBA markets across the nation.</span></p>
+<h2>NBA DIVERSITY &amp; INCLUSION</h2>
+<p style="text-align: justify"><span style="font-size: 14pt">At the NBA, we celebrate our common love of the game, building connections that enable us to leverage our differences. Basketball transcends all dimensions of diversity – those you can see, and those you can’t.</span></p>
+<h2>HBCUS</h2>
+<p style="text-align: justify"><span style="font-size: 14pt">The NBA’s ongoing support of Historically Black Colleges and Universities (HBCUs) focuses on creating greater opportunity for students and alumni through professional development, career advancement, and increased support and awareness for HBCU athletics and institutions. Core components of this work include the NBA HBCU Fellowship Program and the NBA HBCU Classic.</span></p>
+
+</div> <!-- .block-generic-content -->
+
+
+
+<div
+	class="block-featured-story"
+	style="background-color: #f5f5f5"
+	id=featured>
+	<div class="container">
+		<div class="featured-image">
+			<img decoding="async" src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/07/GettyImages-2224155418-scaled.jpg" alt="" />
+		</div>
+		<div class="featured-content">
+			<h2>
+				<a href="https://cares.nba.com/texas-flood-relief-efforts/">
+					NBA Family Supports Texas Flood Relief Efforts				</a>
+			</h2>
+			<p>In a powerful show of unity, the Dallas Mavericks, Houston Rockets, and San Antonio Spurs are teaming up to support those impacted by the recent Central Texas flooding. A limited-edition <strong>“</strong>Texas Strong” T-shirt will be worn by all three teams during warmups at NBA Summer League, symbolizing strength, solidarity, and compassion across the Lone Star State. 100% of proceeds will benefit the Texas Sport for Healing Fund, providing critical support to communities recovering from the floods.</p>
+<div class="style-scope ytd-text-inline-expander" id="snippet"></div>
+<div class="style-scope ytd-watch-metadata">
+<div class="style-scope ytd-structured-description-content-renderer" id="items"></div>
+</div>
+		</div>
+	</div>
+
+</div> <!-- .block-featured-story -->
+
+
+
+<div
+	class="nba-social-hub-block nba-social-hub-block-post-grid"
+	style="background-color:#f5f5f5;"
+	id=programs>
+	<div class="container">
+					<div class="post-grid-section-heading">
+				<h2>Our Programs in Action</h2>
+			</div>
+		
+		<div class="post-grid-items">
+							<div class="post-grid-item">
+					<img
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/07/RS25031_A5L03716-a.jpg"
+						alt=""
+					>
+					<div class="post-grid-text">
+						<h3>A&#039;ja Wilson Champions Next Generation as Jr. WNBA Global Ambassador</h3>
+
+						<p>The WNBA has officially named 2x WNBA Champion and 3x MVP, Las Vegas Aces star A’ja Wilson, as the first-ever Global Ambassador for the Jr. WNBA. The announcement marks a pivotal moment in the league’s mission to empower young girls through basketball, leadership, and community. </p>
+
+												<a
+							href="https://www.wnba.com/news/aja-wilson-named-jr-wnba-global-ambassador"
+							target=""
+						>
+							Learn More						</a>
+						
+					</div>
+				</div>
+							<div class="post-grid-item">
+					<img
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/07/GettyImages-88164254-1vaf-784x441-ezgif.com-webp-to-jpg-converter.jpg"
+						alt=""
+					>
+					<div class="post-grid-text">
+						<h3>NBA Foundation announces latest round of grants championing youth empowerment</h3>
+
+						<p>The NBA Foundation has announced its 15th round of grant funding, supporting 25 nonprofit organizations across the country that are dedicated to advancing economic opportunity for youth. This latest round continues the Foundation’s mission to drive meaningful change by investing in programs that center career readiness, mentorship, entrepreneurship, and community leadership.</p>
+
+												<a
+							href="https://www.nba.com/news/nba-foundation-announces-14th-round-of-grants"
+							target=""
+						>
+							Learn More						</a>
+						
+					</div>
+				</div>
+							<div class="post-grid-item">
+					<img
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/07/Desktop.jpg"
+						alt=""
+					>
+					<div class="post-grid-text">
+						<h3>2026 NBA x HBCU Classic: Hampton, North Carolina AT&amp;T Headed to All-Star Weekend</h3>
+
+						<p>Morehouse College and Tuskegee University men’s basketball programs have been selected to compete in the 2026 NBA HBCU Classic presented by AT&amp;T as part of NBA All-Star 2026 in Los Angeles, CA. The teams were selected in collaboration with the CAA due to their rich traditions, on-court rivalry and commitment to excellence.</p>
+
+												<a
+							href="https://hbcugameday.com/2025/07/08/hbcu-bluebloods-to-meet-at-nba-all-star-weekend/"
+							target=""
+						>
+							Learn More						</a>
+						
+					</div>
+				</div>
+							<div class="post-grid-item">
+					<img
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/07/NBA-CARES-BLCAA-APRIL-IQUICKLEY-16x9-1.jpg"
+						alt=""
+					>
+					<div class="post-grid-text">
+						<h3>Immanuel Quickley Named NBA Cares Bob Lanier Community Assist Award April Winner</h3>
+
+						<p>Toronto Raptors guard Immanuel Quickley as the NBA Cares Bob Lanier Community Assist Award winner for the month of April.  Quickley created scholarships for his high school alma mater through the Immanuel Quickley Scholarship Awards and the Quickley Family Foundation for deserving students.  Quickley also supported holistic health and wellness programs through his IQ5 Elite Youth Basketball Program and involvement with Courtside Care, an event focused on delivering free health care screenings and basketball activities to communities in need.</p>
+
+												<a
+							href="https://cares.nba.com/2025/05/21/immanuel-quickley-april-winner/"
+							target=""
+						>
+							Learn More						</a>
+						
+					</div>
+				</div>
+							<div class="post-grid-item">
+					<img
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/04/bill-walton-hero-1.jpeg"
+						alt=""
+					>
+					<div class="post-grid-text">
+						<h3>Remembering A Champion of Sustainability: Bill Walton</h3>
+
+						<p>In celebration of Earth Day, we explore how NBA legend Bill Walton embodied sustainability principles that continue today. Long before sustainability became a mainstream movement, NBA legend Bill Walton was quietly living the principles that would later define environmental consciousness. His wife, Lori Walton, says her husband’s connection to nature began in his infancy.</p>
+
+												<a
+							href="https://cares.nba.com/nba-arenas/"
+							target=""
+						>
+							Learn more						</a>
+						
+					</div>
+				</div>
+							<div class="post-grid-item">
+					<img
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/03/02142025_Jr.-NBA-Jr.-WNBA-Day-Session-3_DSC04479.jpg"
+						alt=""
+					>
+					<div class="post-grid-text">
+						<h3>Celebrating Jr. NBA/Jr. WNBA Day in the Bay Area </h3>
+
+						<p>Kids from across the San Francisco and Oakland Unified School Districts participated in our annual Jr. NBA/Jr. WNBA Day, having fun learning the fundamentals and values of the game! </p>
+
+												<a
+							href="https://www.youtube.com/watch?v=-pplDqV5CJc"
+							target=""
+						>
+							Watch Now						</a>
+						
+					</div>
+				</div>
+							<div class="post-grid-item">
+					<img
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/03/02162025_Total-Health-Walk-with-GirlTrek_CFA00114-scaled.jpg"
+						alt=""
+					>
+					<div class="post-grid-text">
+						<h3>NBA All-Star 2025: NBA Total Health Walk</h3>
+
+						<p>As part of NBA All-Star Weekend, the NBA teamed up with Evernorth Health Services and GirlTrek to host the first-ever NBA Total Health Walk at Golden Gate Park, engaging approximately 1,000 local community members.  Hall of Famer Lisa Leslie and NBA All-Star Jalen Williams of the Oklahoma City Thunder were on hand to help drive awareness of the interconnectedness of physical, mental, and community health.</p>
+
+												<a
+							href="https://www.youtube.com/watch?v=hu7JlZuasSs&amp;t=5s"
+							target=""
+						>
+							Watch Now						</a>
+						
+					</div>
+				</div>
+							<div class="post-grid-item">
+					<img
+						src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/03/AH1_6591-scaled.jpg"
+						alt=""
+					>
+					<div class="post-grid-text">
+						<h3>NBA All-Stars Surprised With Rings By Boys &amp; Girls Club Youth</h3>
+
+						<p>The Boys and Girls Clubs of San Francisco and Oakland gifted NBA All-Stars their official rings with a special Love Letter to Basketball.</p>
+
+												<a
+							href="https://www.youtube.com/watch?v=lQ1RMnmPg7Y"
+							target=""
+						>
+							Watch Now						</a>
+						
+					</div>
+				</div>
+					</div>
+	</div>
+</div>
+
+
+
+<div
+	class="block-text-image layout-text-left"
+	style="background-color: #F5F5F5;"
+	id=report>
+	<div class="container">
+		<a href="#main" class="back-to-top">Back to top</a>
+		<h2>2024-25 NBA Social Impact Report</h2>
+
+		<div class="content-image">
+			<div class="content">
+				<p style="text-align: justify">The NBA embraces our responsibility to the communities where we live, work and play and the unique power we have to use our platform and resources to create meaningful change. Serving those connected to our game is the foundation of our impact around the world.</p>
+<p style="text-align: justify">This report outlines the work of our league, teams and players over the past season that have helped break down barriers, create meaningful connections and support important causes. Together, the NBA family has used its collective influence to make a meaningful impact in communities in the United States and around the world.</p>
+<ul>
+<li><strong><a href="http://www.nba.com/socialimpactreport">Click here to view the full report</a></strong></li>
+</ul>
+			</div>
+			<div class="image">
+				<img decoding="async" src="https://ak-static.cms.nba.com/wp-content/uploads/sites/142/2025/07/1170x866-Cover.jpg" alt="" />
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<section
+			id="faq"
+		class="nba-social-hub-block nba-social-hub-block-faq"
+			style="background-color: #F5F5F5"
+		id=faq>
+
+	<div class="nba-social-hub-block-faq-container container">
+
+		<a href="#main" class="back-to-top">Back to top</a>
+					<h2>FAQ: NBA Cares</h2>
+		
+					<div class="nba-social-hub-block-faq-list accordion">
+
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-0"
+						aria-controls="accordion-item-0"
+					>
+						What is NBA Cares?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-79005">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-10931">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-0"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-0"
+					>
+						<p style="text-align: justify">Launched in 2005, NBA Cares serves as the league’s global social responsibility platform, fulfilling the NBA’s mission by working to address important social issues. Working alongside internationally recognized youth serving organizations, the NBA family has provided more than 6.2 million hours of hands-on service and helped create more than 2,041 places where kids and families can live, learn or play in 40 countries and territories.</p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-1"
+						aria-controls="accordion-item-1"
+					>
+						Do all teams host NBA Cares events?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-38207">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-57031">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-1"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-1"
+					>
+						<p style="text-align: justify">All 30 NBA Teams work throughout the season to identify specific needs and challenges facing their communities and partner with local community stakeholders to make an impact through NBA Cares events and programming.</p>
+					</div>
+				</div>
+			
+			</div>
+		
+	</div>
+
+</section>
+
+
+
+<section
+		class="nba-social-hub-block nba-social-hub-block-faq"
+			style="background-color: #F5F5F5"
+		>
+
+	<div class="nba-social-hub-block-faq-container container">
+
+		<a href="#main" class="back-to-top">Back to top</a>
+					<h2>FAQ: National Basketball Social Justice Coalition</h2>
+		
+					<div class="nba-social-hub-block-faq-list accordion">
+
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-0"
+						aria-controls="accordion-item-0"
+					>
+						What is the Coalition?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-17994">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-93529">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-0"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-0"
+					>
+						<p style="text-align: justify">The National Basketball <a href="https://coalition.nba.com/">Social Justice Coalition</a> is a 501(c)(4) advocacy organization that leads the NBA family’s collaborative efforts to advance social justice. The Coalition was <a href="https://www.nba.com/news/nba-nbpa-establish-the-national-basketball-social-justice-coalition">formed in 2020</a> as a joint venture of the National Basketball Association (NBA), National Basketball Players Association (NBPA), and National Basketball Coaches Association (NBCA).</p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-1"
+						aria-controls="accordion-item-1"
+					>
+						What is the Coalition’s mission?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-61026">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-97805">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-1"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-1"
+					>
+						<p style="text-align: justify">The Coalition leverages the game of basketball’s influence to promote policy, build strategic partnerships, and empower action on racial inequality and social justice.</p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-2"
+						aria-controls="accordion-item-2"
+					>
+						What is the Coalition’s structure?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-5185">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-98306">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-2"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-2"
+					>
+						<p style="text-align: justify">The Coalition is led by a <a href="https://coalition.nba.com/about/">board</a> of fifteen, including 5 players, 5 team governors, 2 head coaches, the NBA Commissioner, the NBA Deputy Commissioner, and the Executive Director of the NBPA. Day-to-day operations are executed by a team of full-time Coalition employees.</p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-3"
+						aria-controls="accordion-item-3"
+					>
+						What are the Coalition’s issues?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-24064">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-69199">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-3"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-3"
+					>
+						<p style="text-align: justify">Since tipping off its agenda, the Coalition has advocated on a bipartisan basis for better laws and policies on <strong>policing reform</strong>, <strong>voting rights</strong>, <strong>community safety</strong> and <strong>criminal justice reform</strong>.</p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-4"
+						aria-controls="accordion-item-4"
+					>
+						How does the Coalition’s work differ from the other social impact efforts of the NBA community?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-11364">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-26752">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-4"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-4"
+					>
+						<p style="text-align: justify">As a 501(c)(4) organization, the Coalition adds new tools to the NBA family’s social impact work—engaging in <strong>direct legislative </strong>and <strong>policy advocacy</strong> on justice issues.</p>
+					</div>
+				</div>
+			
+			</div>
+		
+	</div>
+
+</section>
+
+
+
+<section
+		class="nba-social-hub-block nba-social-hub-block-faq"
+			style="background-color: #F5F5F5"
+		>
+
+	<div class="nba-social-hub-block-faq-container container">
+
+		<a href="#main" class="back-to-top">Back to top</a>
+					<h2>FAQ: NBA Foundation</h2>
+		
+					<div class="nba-social-hub-block-faq-list accordion">
+
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-0"
+						aria-controls="accordion-item-0"
+					>
+						In what Geographic areas does the Foundation make grants? 
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-58506">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-7003">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-0"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-0"
+					>
+						<p>The Foundation makes grants across the United States and Canada with a specific focus on the NBA’s 28 markets.</p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-1"
+						aria-controls="accordion-item-1"
+					>
+						How can a nonprofit receive funding from the NBA Foundation?  
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-29134">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-38814">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-1"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-1"
+					>
+						<p style="text-align: justify">The first step in the NBA Foundation’s grantmaking process is submitting a brief application through the Foundation’s grants application portal. Additional instructions can be <a href="https://nbafoundation.nba.com/grants/">found here</a>. If you have any questions or technical issues, please direct all inquiries to <a href="https://socialimpact.nba.com/grants@nba.com">grants@nba.com </a></p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-2"
+						aria-controls="accordion-item-2"
+					>
+						What are the grant requirements for an organization to be considered for funding? 
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-41866">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-63135">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-2"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-2"
+					>
+						<p>To be considered for a grant from the NBA Foundation, your organization must meet the following requirements:</p>
+<ul>
+<li>Qualify as a registered 501(c)3 tax organization or a T3010 if operating in Canada</li>
+<li>Focus on promoting school-to-career employment opportunities that target under-resourced youth ages 14-24 years old</li>
+<li>Serve a minimum of 25 youth annually across your programs</li>
+<li>Have an IRS Form 990 or a 990-EZ</li>
+<li>Operate in one or more of the NBA&#8217;s 28 markets</li>
+</ul>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-3"
+						aria-controls="accordion-item-3"
+					>
+						What does the NBA Foundation NOT Fund? 
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-85015">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-70559">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-3"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-3"
+					>
+						<p>The Foundation does not support:</p>
+<ul>
+<li>Direct donations or grants to individuals</li>
+<li>Individual scholarships or sponsorships</li>
+<li>Projects or programs primarily focused on serving adults over the age of 25</li>
+<li>Political campaigns and lobbying efforts</li>
+<li>After school or Pre-K programs</li>
+<li>Hospitals</li>
+</ul>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-4"
+						aria-controls="accordion-item-4"
+					>
+						What is the NBA HBCU Fellowship?  
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-26506">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-70058">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-4"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-4"
+					>
+						<p style="text-align: justify">The NBA HBCU Fellowship Program aims to provide career development opportunities in the business of basketball for undergraduate and graduate students from Historically Black Colleges and Universities (HBCUs). Fellows are selected by NBA teams and the league office to work within a variety of departments, including ticket sales, corporate partnerships, legal, social responsibility, and marketing. The Fellowship Program is a paid 10-week summer internship program and will run from June – August.</p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-5"
+						aria-controls="accordion-item-5"
+					>
+						Does the NBA Foundation offer capacity-building support or multi-year grants?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-17996">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-80085">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-5"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-5"
+					>
+						<p>Yes, we offer both.</p>
+					</div>
+				</div>
+							<div class="accordion-item">
+					<button
+						class="accordion-title"
+						id="accordion-item-6"
+						aria-controls="accordion-item-6"
+					>
+						What is the NBA Foundation&#8217;s signature programming?
+						<span class="accordion-icon">
+							
+	<svg class="icon plus" aria-hidden="true" role="img">
+		<title id="title-open-1879">
+			open		</title>
+
+		
+					<use xlink:href="#plus"></use>
+		
+	</svg>
+
+	
+	<svg class="icon minus" aria-hidden="true" role="img">
+		<title id="title-close-97963">
+			close		</title>
+
+		
+					<use xlink:href="#minus"></use>
+		
+	</svg>
+
+							</span>
+					</button>
+
+					<div
+						id="accordion-content-6"
+						class="accordion-content"
+						role="region"
+						aria-labelledby="accordion-item-6"
+					>
+						<p>The NBA Foundation offers 3 signature programs that support our mission to drive economic opportunity for under-resourced youth through employment and career development. Our programs include the NBA x HBCU Fellowship, the NBA All-Star Pitch Competition, and Tech Challenge. To learn more about our signature programming, visit <a href="https://nbafoundation.nba.com/">NBAFoundation.com</a></p>
+					</div>
+				</div>
+			
+			</div>
+		
+	</div>
+
+</section>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->
+
+	</main><!-- #main -->
+
+
+	<footer class="site-footer">
+
+		<div id="nba-footer"></div>
+
+	</footer><!-- .site-footer container-->
+
+		<div class="off-canvas-screen"></div>
+	<nav class="off-canvas-container" aria-label="Mobile Menu" aria-hidden="true" tabindex="-1">
+		<div class="off-canvas-content"><ul id="site-mobile-menu" class="mobile-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="#programs">Our Programs in Action</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="#report">Social Impact Report</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="#faq">FAQ</a></li>
+</ul></div>	</nav>
+		<script type='text/javascript' src='https://ak-static.cms.nba.com/ccpa.js?ver=1' id='nba-ccpa-js'></script>
+<script type='text/javascript' src='https://ak-static.cms.nba.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type='text/javascript' src='https://ak-static.cms.nba.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://ak-static.cms.nba.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://ak-static.cms.nba.com/wp-content/themes/nba-social-hub/build/index.js?ver=1.0.0' id='nba-social-hub-scripts-js'></script>
+<script type="text/javascript" src="https://cdn.nba.com/user-consent/index.min.js"></script>
+
+<script type="text/javascript">
+  var ucDomainEnv = "-test"; // Change to "" on prod 
+      var ucCountryCode = window._esi ? window._esi.country : "US";
+</script>
+
+<script>
+    (function initalizeUserConsent(win) {
+win.WM.UserConsentConfig = {
+            cookieDomain: ".nba.com",
+            brand: "NBA",
+            src: "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js",
+            domId: "d0494fd0-8921-497a-8323-e3d29775ce1b" + ucDomainEnv, // using ucDomainEnv      
+            countryCode: ucCountryCode, // using ucCountryCode
+        };
+        win.WM.UserConsent.init(win.WM.UserConsentConfig);
+    })(window);
+
+    console.log('ESI', window._esi)
+    console.log('country', ucCountryCode);
+</script>
+
+<script src="https://assets.adobedtm.com/82bf3c13a525/38d894c71c0b/launch-ff3828f362fb.min.js" async></script><div class="svg-sprite-wrapper"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="caret-down" viewBox="0 0 16 28"><title>caret-down</title><path fill="currentColor" d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"/></symbol><symbol id="close" viewBox="0 0 22.5 22.27"><defs><style>.e976b01e-b823-4a33-afa4-7e423e5efc07{fill:#303536}</style></defs><title>close</title><g id="bc0933f0-4035-477f-a26f-3729a5f20fc6" data-name="Layer 2"><g id="ac142a7b-f51d-4aa6-8dfb-c0c4fdfa64fb" data-name="Layer 1"><path class="e976b01e-b823-4a33-afa4-7e423e5efc07" d="m.4 2.17 19.44 19.44a1.25 1.25 0 1 0 1.77-1.77L2.17.4A1.18 1.18 0 0 0 .4.4a1.18 1.18 0 0 0 0 1.77Z"/><path class="e976b01e-b823-4a33-afa4-7e423e5efc07" d="M2.66 21.87 22.1 2.43a1.18 1.18 0 0 0 0-1.77 1.18 1.18 0 0 0-1.77 0L.89 20.1a1.18 1.18 0 0 0 0 1.77 1.18 1.18 0 0 0 1.77 0Z"/></g></g></symbol><symbol id="facebook-square" viewBox="0 0 24 28"><title>facebook-square</title><path fill="currentColor" d="M19.5 2q1.859 0 3.18 1.32T24 6.5v15q0 1.859-1.32 3.18T19.5 26h-2.938v-9.297h3.109l.469-3.625h-3.578v-2.312q0-.875.367-1.313t1.43-.438l1.906-.016V5.765q-.984-.141-2.781-.141-2.125 0-3.398 1.25t-1.273 3.531v2.672H9.688v3.625h3.125v9.297H4.5q-1.859 0-3.18-1.32T0 21.499v-15q0-1.859 1.32-3.18t3.18-1.32h15z"/></symbol><symbol id="hamburger" viewBox="0 0 30 20"><title>hamburger</title><g data-name="Layer 2"><path d="M12.5 11.25h16.25A1.18 1.18 0 0 0 30 10a1.18 1.18 0 0 0-1.25-1.25H12.5A1.18 1.18 0 0 0 11.25 10a1.18 1.18 0 0 0 1.25 1.25ZM1.25 2.5h27.5A1.18 1.18 0 0 0 30 1.25 1.18 1.18 0 0 0 28.75 0H1.25A1.18 1.18 0 0 0 0 1.25 1.18 1.18 0 0 0 1.25 2.5Zm0 17.5h27.5a1.25 1.25 0 0 0 0-2.5H1.25a1.25 1.25 0 0 0 0 2.5Z" style="fill:currentColor" data-name="Layer 1"/></g></symbol><symbol id="instagram-square" viewBox="0 0 27 32"><title>instagram-square</title><path fill="currentColor" d="M18.286 16q0-1.893-1.339-3.232t-3.232-1.339-3.232 1.339T9.144 16t1.339 3.232 3.232 1.339 3.232-1.339T18.286 16zm2.464 0q0 2.929-2.054 4.982t-4.982 2.054-4.982-2.054T6.678 16t2.054-4.982 4.982-2.054 4.982 2.054T20.75 16zm1.929-7.321q0 .679-.482 1.161t-1.161.482-1.161-.482-.482-1.161.482-1.161 1.161-.482 1.161.482.482 1.161zM13.714 4.75l-1.366-.009q-1.241-.009-1.884 0t-1.723.054-1.839.179-1.277.33q-.893.357-1.571 1.036T3.018 7.911q-.196.518-.33 1.277t-.179 1.839-.054 1.723 0 1.884T2.464 16t-.009 1.366 0 1.884.054 1.723.179 1.839.33 1.277q.357.893 1.036 1.571t1.571 1.036q.518.196 1.277.33t1.839.179 1.723.054 1.884 0 1.366-.009 1.366.009 1.884 0 1.723-.054 1.839-.179 1.277-.33q.893-.357 1.571-1.036t1.036-1.571q.196-.518.33-1.277t.179-1.839.054-1.723 0-1.884T24.964 16t.009-1.366 0-1.884-.054-1.723-.179-1.839-.33-1.277q-.357-.893-1.036-1.571t-1.571-1.036q-.518-.196-1.277-.33t-1.839-.179-1.723-.054-1.884 0-1.366.009zM27.429 16q0 4.089-.089 5.661-.179 3.714-2.214 5.75t-5.75 2.214q-1.571.089-5.661.089t-5.661-.089q-3.714-.179-5.75-2.214T.09 21.661Q.001 20.09.001 16t.089-5.661q.179-3.714 2.214-5.75t5.75-2.214q1.571-.089 5.661-.089t5.661.089q3.714.179 5.75 2.214t2.214 5.75q.089 1.571.089 5.661z"/></symbol><symbol id="linkedin-square" viewBox="0 0 24 28"><title>linkedin-square</title><path fill="currentColor" d="M3.703 22.094h3.609V11.25H3.703v10.844zM7.547 7.906q-.016-.812-.562-1.344t-1.453-.531-1.477.531-.57 1.344q0 .797.555 1.336t1.445.539h.016q.922 0 1.484-.539t.562-1.336zm9.141 14.188h3.609v-6.219q0-2.406-1.141-3.641T16.14 11q-2.125 0-3.266 1.828h.031V11.25H9.296q.047 1.031 0 10.844h3.609v-6.062q0-.594.109-.875.234-.547.703-.93t1.156-.383q1.813 0 1.813 2.453v5.797zM24 6.5v15q0 1.859-1.32 3.18T19.5 26h-15q-1.859 0-3.18-1.32T0 21.5v-15q0-1.859 1.32-3.18T4.5 2h15q1.859 0 3.18 1.32T24 6.5z"/></symbol><symbol id="minus" viewBox="0 0 24 24"><title>minus</title><path d="M0 11h24v3H0Z" fill="currentColor"/></symbol><symbol id="pause" viewBox="0 0 24 28"><title>pause</title><path fill="currentColor" d="M24 3v22c0 .547-.453 1-1 1h-8c-.547 0-1-.453-1-1V3c0-.547.453-1 1-1h8c.547 0 1 .453 1 1zM10 3v22c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1V3c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></symbol><symbol id="play" viewBox="0 0 22 28"><title>play</title><path fill="currentColor" d="M21.625 14.484.875 26.015c-.484.266-.875.031-.875-.516v-23c0-.547.391-.781.875-.516l20.75 11.531c.484.266.484.703 0 .969z"/></symbol><symbol id="plus" viewBox="0 0 24 24"><title>plus</title><path d="M10.667 0v10.667H0v2.666h10.667V24h2.666V13.333H24v-2.666H13.333V0h-2.666Z" fill="currentColor"/></symbol><symbol id="twitter-square" viewBox="0 0 24 28"><title>twitter-square</title><path fill="currentColor" d="M20 9.531q-.875.391-1.891.531 1.062-.625 1.453-1.828-1.016.594-2.094.797Q16.515 8 15.077 8q-1.359 0-2.32.961t-.961 2.32q0 .453.078.75-2.016-.109-3.781-1.016t-3-2.422q-.453.781-.453 1.656 0 1.781 1.422 2.734-.734-.016-1.563-.406v.031q0 1.172.781 2.086t1.922 1.133q-.453.125-.797.125-.203 0-.609-.063.328.984 1.164 1.625t1.898.656q-1.813 1.406-4.078 1.406-.406 0-.781-.047 2.312 1.469 5.031 1.469 1.75 0 3.281-.555t2.625-1.484 1.883-2.141 1.172-2.531.383-2.633q0-.281-.016-.422.984-.703 1.641-1.703zM24 6.5v15q0 1.859-1.32 3.18T19.5 26h-15q-1.859 0-3.18-1.32T0 21.5v-15q0-1.859 1.32-3.18T4.5 2h15q1.859 0 3.18 1.32T24 6.5z"/></symbol></svg></div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"09f0cb5c68","applicationID":"1506073782","transactionName":"NgcGZUJQVxYEVEJcCQ9NJVJEWFYLSl5YUQMZ","queueTime":0,"applicationTime":269,"atts":"GkAREwpKRElHVhQPHRwf","errorBeacon":"bam.nr-data.net","agent":""}</script><script type="text/javascript"  src="https://socialimpact.nba.com/ffZvGibAgN5b/BI/2Hfnv0AhXz/YmaNhSi1w11pb9uJ/Y3R7TH0B/eRp/baj4lelMB"></script></body>
+
+
+<!-- Mirrored from socialimpact.nba.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Feb 2026 09:35:40 GMT -->
+</html>

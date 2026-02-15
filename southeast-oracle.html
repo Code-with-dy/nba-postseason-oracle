@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Southeast Division Oracle</title>
+  <link rel="stylesheet" href="oracle.css">
+</head>
+<body>
+  
+    <div class="header">
+       Southeast Division Oracle
+    </div>
+
+
+  <img src="assets/images/nba.svg" alt="NBA Logo" class="nba-logo">
+
+  <div class="teams-container">
+    <div class="team-card">
+      <img src="assets/images/miami-heat.svg" alt="Miami Heat">
+      <h3>Miami Heat</h3>
+      <p>Prediction: Top 2 finish</p>
+    </div>
+    <div class="team-card">
+      <img src="assets/images/atlanta-hawks.svg" alt="Atlanta Hawks">
+      <h3>Atlanta Hawks</h3>
+      <p>Prediction: Make playoffs</p>
+    </div>
+    <div class="team-card">
+      <img src="assets/images/orlando-magic.svg" alt="Orlando Magic">
+      <h3>Orlando Magic</h3>
+      <p>Prediction: Rebuild year</p>
+    </div>
+    <div class="team-card">
+      <img src="assets/images/charlotte-hornets.svg" alt="Charlotte Hornets">
+      <h3>Charlotte Hornets</h3>
+      <p>Prediction: Middle pack</p>
+    </div>
+    <div class="team-card">
+      <img src="assets/images/washington-wizards.svg" alt="Washington Wizards">
+      <h3>Washington Wizards</h3>
+      <p>Prediction: Playoffs push</p>
+    </div>
+  </div>
+
+
+  <script src="oracle.js"></script>
+  <script>
+    // Load predictions from JSON
+    fetch('predictions.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('oracle-output');
+        data.forEach(pred => {
+          const card = document.createElement('div');
+          card.className = 'card';
+
+          // If you have team logos in assets/images, use them
+          const logoPath = `assets/images/${pred.team.toLowerCase().replace(/\s/g,'-')}-logo.svg`;
+
+          card.innerHTML = `
+            <div class="card-inner">
+              <img src="${logoPath}" alt="${pred.team}" class="team-logo" onerror="this.style.display='none'">
+              <div class="team-info">
+                <strong>${pred.team}</strong>
+                <p>${pred.prediction}</p>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => console.error('Error loading predictions:', err));
+  </script>
+</body>
+</html>
