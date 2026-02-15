@@ -19,9 +19,9 @@ jobs:
         run: |
           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-      - name: List files in NBA_Clone
+      - name: List files in repo root
         run: |
-          ls -R "${{ github.workspace }}/NBA_Clone"
+          ls -R "${{ github.workspace }}"
 
       - name: Upload to Azure Blob Storage
         run: |
@@ -29,5 +29,5 @@ jobs:
             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
             --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
             --destination '$web' \
-            --source "${{ github.workspace }}/NBA_Clone" \
+            --source "${{ github.workspace }}" \
             --overwrite
