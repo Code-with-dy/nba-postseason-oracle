@@ -1,5 +1,4 @@
-
-name: Deploy NBA Oracle to Azure Blob
+name: Deploy NBA Clone to GitHub Pages
 
 on:
   push:
@@ -14,42 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Azure CLI
-        run: |
-          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-      - name: Upload to Azure Blob Storage
-        run: |
-          az storage blob upload-batch \
-            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
-            --destination '$web' \
-            --source . \
-            --overwrite
-
-name: Deploy NBA Clone to GitHub Pages
-
-on:
-  push:
-    branches:
-      - main  # deploy when main branch is updated
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Git
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GH_TOKEN }}  # <-- your secret
-          publish_dir: ./  # root folder of your site
-
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./
