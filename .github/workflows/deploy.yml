@@ -9,29 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Install Azure CLI
       - name: Install Azure CLI
-        run: |
-          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-          az --version
+        run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-      # 3️⃣ Confirm secret exists
-      - name: Confirm Azure secret
+      - name: Confirm Azure secret exists
         run: |
           if [ -z "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" ]; then
             echo "ERROR: AZURE_STORAGE_CONNECTION_STRING not set!"
             exit 1
           fi
 
-      # 4️⃣ Ensure $web container exists
-      - name: Ensure $web container
-        run: |
-          az storage container create --name '$web' --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --public-access blob || echo "$web container already exists"
+      - name: Ensure $web container exists
+        run: az storage container create --name '$web' --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --public-access blob
 
-      # 5️⃣ Upload all files (single line)
-      - name: Upload files to Azure
+      - name: Upload all files to Azure
         run: az storage blob upload-batch --source . --destination '$web' --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --overwrite
