@@ -20,30 +20,20 @@ jobs:
         az --version
 
     # Step 3 — Confirm secret exists
-    - name: Check secret
+    - name: Check Azure secret
       run: |
         if [ -z "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" ]; then
           echo "ERROR: AZURE_STORAGE_CONNECTION_STRING not set!"
           exit 1
         else
-          echo "AZURE_STORAGE_CONNECTION_STRING is available."
+          echo "Azure secret is available."
         fi
 
-    # Step 4 — Ensure $web container exists (optional safety)
+    # Step 4 — Ensure $web container exists
     - name: Create $web container if missing
-      run: |
-        az storage container create \
-          --name '$web' \
-          --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
-          --public-access blob || echo "$web container already exists"
+      run: az storage container create --name $web --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --public-access blob || echo "$web container already exists"
 
-    # Step 5 — Upload all files to Azure Blob Storage
+    # Step 5 — Upload all files
     - name: Upload files to Azure Blob
-      run: |
-        echo "Uploading files from $GITHUB_WORKSPACE to Azure Storage..."
-        az storage blob upload-batch \
-          --source "$GITHUB_WORKSPACE" \
-          --destination '$web' \
-          --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
-          --overwrite
-        echo "Upload completed successfully."
+      working-directory: ${{ github.workspace }}
+      run: az storage blob upload-batch --source . --destination '$web' --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --overwrite
