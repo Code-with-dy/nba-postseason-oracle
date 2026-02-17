@@ -29,6 +29,21 @@ jobs:
           echo "AZURE_STORAGE_CONNECTION_STRING is available."
         fi
 
-    # Step 4 — Upload files to Azure Blob Storage
+    # Step 4 — Ensure $web container exists (optional safety)
+    - name: Create $web container if missing
+      run: |
+        az storage container create \
+          --name '$web' \
+          --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+          --public-access blob || echo "$web container already exists"
+
+    # Step 5 — Upload all files to Azure Blob Storage
     - name: Upload files to Azure Blob
-      run: az storage blob upload-batch --source "$GITHUB_WORKSPACE" --destination '$web' --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --overwrite
+      run: |
+        echo "Uploading files from $GITHUB_WORKSPACE to Azure Storage..."
+        az storage blob upload-batch \
+          --source "$GITHUB_WORKSPACE" \
+          --destination '$web' \
+          --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+          --overwrite
+        echo "Upload completed successfully."
