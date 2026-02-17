@@ -9,31 +9,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1 — Checkout repo
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # 1️⃣ Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    # Step 2 — Install Azure CLI
-    - name: Install Azure CLI
-      run: |
-        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-        az --version
+      # 2️⃣ Install Azure CLI
+      - name: Install Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+          az --version
 
-    # Step 3 — Confirm secret exists
-    - name: Check Azure secret
-      run: |
-        if [ -z "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" ]; then
-          echo "ERROR: AZURE_STORAGE_CONNECTION_STRING not set!"
-          exit 1
-        else
-          echo "Azure secret is available."
-        fi
+      # 3️⃣ Check secret
+      - name: Confirm Azure secret exists
+        run: |
+          if [ -z "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" ]; then
+            echo "ERROR: AZURE_STORAGE_CONNECTION_STRING not set!"
+            exit 1
+          fi
 
-    # Step 4 — Ensure $web container exists
-    - name: Create $web container if missing
-      run: az storage container create --name $web --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --public-access blob || echo "$web container already exists"
+      # 4️⃣ Ensure $web container exists
+      - name: Ensure $web container
+        run: |
+          az storage container create \
+            --name $web \
+            --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+            --public-access blob \
+            || echo "$web container already exists"
 
-    # Step 5 — Upload all files
-    - name: Upload files to Azure Blob
-      working-directory: ${{ github.workspace }}
-      run: az storage blob upload-batch --source . --destination '$web' --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --overwrite
+      # 5️⃣ Upload all files (working directory = repo root)
+      - name: Upload files to Azure
+        run: az storage blob upload-batch --source $GITHUB_WORKSPACE --destination $web --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --overwrite
