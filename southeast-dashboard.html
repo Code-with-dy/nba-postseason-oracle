@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Southeast Division Dashboard</title>
+  <link rel="stylesheet" href="oracle.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    Southeast Division Oracle Dashboard
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="southeast-dashboard.html" class="active">Southeast</a></li>
+      <li><a href="atlantic-dashboard.html">Atlantic</a></li>
+      <li><a href="central-dashboard.html">Central</a></li>
+      <li><a href="northwest-dashboard.html">Northwest</a></li>
+      <li><a href="pacific-dashboard.html">Pacific</a></li>
+    </ul>
+  </nav>
+
+  <!-- DASHBOARD CONTAINER -->
+  <div class="dashboard-container">
+
+    <!-- KPI ROW -->
+    <div class="kpi-row" id="kpi-row">
+      <!-- JS will populate KPI cards -->
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-section">
+      <canvas id="southeastChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- TEAM CARDS -->
+    <div class="teams-container" id="oracle-output">
+      <!-- JS will populate team cards -->
+    </div>
+
+  </div>
+
+  <script>
+    // Fetch predictions from CSV
+    fetch('data/predictions.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        const container = document.getElementById('oracle-output');
+        const kpiContainer = document.getElementById('kpi-row');
+
+        container.innerHTML = '';
+        kpiContainer.innerHTML = '';
+
+        const rows = csvText.split('\n').slice(1); // skip header
+        const data = [];
+
+        // Parse CSV into objects
+        rows.forEach(row => {
+          const [team, probability, division] = row.split(',');
+          if (!team) return; // skip empty rows
+          if (division === 'Southeast') {
+            data.push({ team, probability: parseFloat(probability) });
+          }
+        });
+
+        // Sort by probability descending
+        data.sort((a,b) => b.probability - a.probability);
+
+        // KPI Cards
+        if (data.length > 0) {
+          const topTeam = data[0];
+          const avgProb = (data.reduce((sum, t) => sum + t.probability, 0) / data.length).toFixed(1);
+          const playoffCount = data.filter(t => t.probability >= 50).length;
+
+          const kpiHTML = `
+            <div class="kpi-card">
+              <h4>Top Team</h4>
+              <p>${topTeam.team}</p>
+            </div>
+            <div class="kpi-card">
+              <h4>Average Playoff %</h4>
+              <p>${avgProb}%</p>
+            </div>
+            <div class="kpi-card">
+              <h4>Teams Likely Playoffs</h4>
+              <p>${playoffCount}</p>
+            </div>
+          `;
+          kpiContainer.innerHTML = kpiHTML;
+        }
+
+        // Chart data
+        const labels = data.map(d => d.team);
+        const probabilities = data.map(d => d.probability);
+
+        // Team cards
+        data.forEach(pred => {
+          const card = document.createElement('div');
+          card.className = 'team-card';
+          const logoPath = `assets/images/${pred.team.toLowerCase().replace(/\s/g,'-')}-logo.svg`;
+          card.innerHTML = `
+            <img src="${logoPath}" alt="${pred.team}" onerror="this.style.display='none'">
+            <h3>${pred.team}</h3>
+            <p>Prediction: ${pred.probability.toFixed(1)}%</p>
+          `;
+          container.appendChild(card);
+        });
+
+        // Chart.js bar chart
+        const ctx = document.getElementById('southeastChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Playoff Probability (%)',
+              data: probabilities,
+              backgroundColor: probabilities.map(p => p >= 50 ? 'rgba(226,35,26,0.8)' : 'rgba(100,100,100,0.6)'),
+              borderColor: 'rgba(255,255,255,0.8)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { beginAtZero: true, max: 100, ticks: { color: '#fff', font: { weight: 'bold' } } },
+              x: { ticks: { color: '#fff', font: { weight: 'bold' } } }
+            }
+          }
+        });
+
+      })
+      .catch(err => console.error('Error loading CSV predictions:', err));
+  </script>
+
+</body>
+</html>

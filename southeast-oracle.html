@@ -1,73 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Southeast Division Oracle</title>
+  <title>Southeast Division Dashboard</title>
   <link rel="stylesheet" href="oracle.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  
-    <div class="header">
-       Southeast Division Oracle
+
+  <header class="header">
+    Southeast Division Oracle Dashboard
+  </header>
+
+  <div class="dashboard-container">
+
+    <!-- Chart container -->
+    <div class="chart-section">
+      <canvas id="southeastChart" width="400" height="200"></canvas>
     </div>
 
+    <!-- Teams cards -->
+    <div class="teams-container" id="oracle-output">
+      <!-- JS will populate cards here -->
+    </div>
 
-  <img src="assets/images/nba.svg" alt="NBA Logo" class="nba-logo">
-
-  <div class="teams-container">
-    <div class="team-card">
-      <img src="assets/images/miami-heat.svg" alt="Miami Heat">
-      <h3>Miami Heat</h3>
-      <p>Prediction: Top 2 finish</p>
-    </div>
-    <div class="team-card">
-      <img src="assets/images/atlanta-hawks.svg" alt="Atlanta Hawks">
-      <h3>Atlanta Hawks</h3>
-      <p>Prediction: Make playoffs</p>
-    </div>
-    <div class="team-card">
-      <img src="assets/images/orlando-magic.svg" alt="Orlando Magic">
-      <h3>Orlando Magic</h3>
-      <p>Prediction: Rebuild year</p>
-    </div>
-    <div class="team-card">
-      <img src="assets/images/charlotte-hornets.svg" alt="Charlotte Hornets">
-      <h3>Charlotte Hornets</h3>
-      <p>Prediction: Middle pack</p>
-    </div>
-    <div class="team-card">
-      <img src="assets/images/washington-wizards.svg" alt="Washington Wizards">
-      <h3>Washington Wizards</h3>
-      <p>Prediction: Playoffs push</p>
-    </div>
   </div>
-
 
   <script src="oracle.js"></script>
   <script>
-    // Load predictions from JSON
     fetch('predictions.json')
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById('oracle-output');
-        data.forEach(pred => {
-          const card = document.createElement('div');
-          card.className = 'card';
+        
+        const labels = [];
+        const probabilities = [];
 
-          // If you have team logos in assets/images, use them
+        data.forEach(pred => {
+          labels.push(pred.team);
+          probabilities.push(pred.probability * 100); // convert to % for chart
+
+          const card = document.createElement('div');
+          card.className = 'team-card';
+
           const logoPath = `assets/images/${pred.team.toLowerCase().replace(/\s/g,'-')}-logo.svg`;
 
           card.innerHTML = `
-            <div class="card-inner">
-              <img src="${logoPath}" alt="${pred.team}" class="team-logo" onerror="this.style.display='none'">
-              <div class="team-info">
-                <strong>${pred.team}</strong>
-                <p>${pred.prediction}</p>
-              </div>
-            </div>
+            <img src="${logoPath}" alt="${pred.team}" onerror="this.style.display='none'">
+            <h3>${pred.team}</h3>
+            <p>Prediction: ${(pred.probability*100).toFixed(1)}%</p>
           `;
           container.appendChild(card);
         });
+
+        // Render bar chart
+        const ctx = document.getElementById('southeastChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Playoff Probability (%)',
+              data: probabilities,
+              backgroundColor: 'rgba(226, 35, 26, 0.7)',
+              borderColor: 'rgba(226, 35, 26, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => `${ctx.dataset.label}: ${ctx.raw.toFixed(1)}%`
+                }
+              }
+            },
+            scales: {
+              y: { beginAtZero: true, max: 100 },
+              x: { ticks: { color: '#fff' } }
+            }
+          }
+        });
+
       })
       .catch(err => console.error('Error loading predictions:', err));
   </script>

@@ -1,73 +1,117 @@
-/* Oracle Page Styles */
-
-/* Page body */
+/* GENERAL STYLES */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0d0d0d; /* dark NBA-style background */
-  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
 
-/* Header */
+/* HEADER */
 .header {
   text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(90deg, #e2231a, #9a4105); /* NBA-style gradient */
-  color: white;
-  font-size: 36px;
+  padding: 30px 20px;
+  background: linear-gradient(90deg, #e2231a, #9a4105);
+  font-size: 32px;
   font-weight: bold;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-/* Container for all teams */
+/* NAVBAR */
+.navbar {
+  background-color: #1a1a1a;
+  padding: 10px 0;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.navbar ul li { margin: 0 15px; }
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.navbar ul li a:hover,
+.navbar ul li a.active { background: #e2231a; }
+
+/* DASHBOARD CONTAINER */
+.dashboard-container {
+  padding: 30px 20px;
+}
+
+/* KPI CARDS */
+.kpi-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.kpi-card {
+  background: #1e1e1e;
+  flex: 1;
+  min-width: 180px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.kpi-card h4 { margin: 0 0 10px; color: #ccc; }
+.kpi-card p { font-size: 22px; font-weight: bold; margin: 0; color: #fff; }
+
+/* CHART */
+.chart-section {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* TEAM CARDS */
 .teams-container {
   display: flex;
-  flex-wrap: wrap;        
-  justify-content: center; 
-  align-items: center;    
-  gap: 50px;              
-  padding: 50px 20px;     
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
-
-/* Individual team card */
 .team-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1a1a1a; 
-  border-radius: 16px;
-  padding: 30px;
-  width: 220px;            
-  box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-  transition: transform 0.2s;
+  background-color: #222;
+  border-radius: 12px;
+  padding: 20px;
+  width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s, background 0.2s;
 }
-
 .team-card:hover {
   transform: translateY(-8px);
+  background: #333;
 }
-
-/* Team logo */
 .team-card img {
-  width: 140px;           
-  height: auto;           
-  margin-bottom: 20px;
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
 }
-
-/* Team name */
 .team-card h3 {
   margin: 0;
-  font-size: 22px;
-  color: #ffffff;
+  font-size: 18px;
   text-align: center;
 }
-
-/* Prediction text */
 .team-card p {
-  font-size: 18px;
-  color: #cccccc;
+  margin: 5px 0 0;
+  font-size: 16px;
   text-align: center;
-  margin-top: 10px;
+  color: #ccc;
 }
