@@ -29,11 +29,11 @@ jobs:
             echo "✅ AZURE_STORAGE_CONNECTION_STRING is available."
           fi
 
-      # 4️⃣ Test connection to Azure Storage
+      # 4️⃣ Test connection to Azure Storage (fixed)
       - name: Test Azure Storage connection
         run: |
           echo "Testing Azure Storage connection..."
-          az storage account show --query name --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+          az storage container list --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --output table
           echo "✅ Connection successful."
 
       # 5️⃣ Ensure $web container exists
