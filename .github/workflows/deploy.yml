@@ -31,11 +31,18 @@ jobs:
       - name: Ensure $web container
         run: |
           az storage container create \
-            --name $web \
+            --name '$web' \
             --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
             --public-access blob \
             || echo "$web container already exists"
 
-      # 5️⃣ Upload all files (working directory = repo root)
+      # 5️⃣ Upload all files
       - name: Upload files to Azure
-        run: az storage blob upload-batch --source $GITHUB_WORKSPACE --destination $web --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --overwrite
+        run: |
+          echo "Uploading files..."
+          az storage blob upload-batch \
+            --source $GITHUB_WORKSPACE \
+            --destination '$web' \
+            --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+            --overwrite
+          echo "Upload completed successfully."
