@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1 — Checkout the repo
+    # Step 1 — Checkout repo
     - name: Checkout repository
       uses: actions/checkout@v3
 
@@ -31,11 +31,4 @@ jobs:
 
     # Step 4 — Upload files to Azure Blob Storage
     - name: Upload files to Azure Blob
-      run: |
-        echo "Starting upload to Azure..."
-        az storage blob upload-batch ^
-          --source "$GITHUB_WORKSPACE" ^
-          --destination '$web' ^
-          --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" ^
-          --overwrite
-        echo "Upload finished."
+      run: az storage blob upload-batch --source "$GITHUB_WORKSPACE" --destination '$web' --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --overwrite
