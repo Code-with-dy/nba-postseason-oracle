@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Atlantic Division Dashboard</title>
   <link rel="stylesheet" href="oracle.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -21,19 +22,19 @@
       <li><a href="central-dashboard.html">Central</a></li>
       <li><a href="northwest-dashboard.html">Northwest</a></li>
       <li><a href="pacific-dashboard.html">Pacific</a></li>
-      <li><a href="southwest-dashboard.html" class="active">Southwest</a></li>
+      <li><a href="southwest-dashboard.html">Southwest</a></li>
     </ul>
   </nav>
 
-  <!-- DASHBOARD -->
+  <!-- DASHBOARD CONTAINER -->
   <div class="dashboard-container">
 
     <!-- KPI ROW -->
     <div class="kpi-row" id="kpi-row"></div>
 
-    <!-- CHART -->
+    <!-- CHART SECTION -->
     <div class="chart-section">
-      <canvas id="atlanticChart" width="400" height="200"></canvas>
+      <canvas id="atlanticChart"></canvas>
     </div>
 
     <!-- TEAM CARDS -->
@@ -42,39 +43,43 @@
   </div>
 
   <script>
-    fetch('data/predictions.csv')
-      .then(response => response.text())
-      .then(csvText => {
+    const atlanticTeams = [
+      "Boston Celtics",
+      "Brooklyn Nets",
+      "New York Knicks",
+      "Philadelphia 76ers",
+      "Toronto Raptors"
+    ];
 
-        const container = document.getElementById('oracle-output');
+    fetch('data/predictions.json')
+      .then(response => response.json())
+      .then(jsonData => {
+        const container    = document.getElementById('oracle-output');
         const kpiContainer = document.getElementById('kpi-row');
 
-        container.innerHTML = '';
+        container.innerHTML    = '';
         kpiContainer.innerHTML = '';
 
-        const rows = csvText.split('\n').slice(1);
-        const data = [];
+        // Filter to Atlantic teams using correct JSON keys
+        const data = jsonData
+          .filter(item => item.TEAM_NAME && atlanticTeams.includes(item.TEAM_NAME))
+          .map(item => ({
+            team:        item.TEAM_NAME,
+            season:      item.SEASON,
+            probability: parseFloat(item['1_predicted_proba']) * 100,
+            predicted:   item.MADE_PLAYOFFS_predicted,
+            actual:      item.MADE_PLAYOFFS,
+            wins:        item.W,
+            losses:      item.L
+          }));
 
-        // Parse CSV + filter ATLANTIC
-        rows.forEach(row => {
-          const [team, probability, division] = row.split(',');
-          if (!team) return;
+        // Sort descending by probability
+        data.sort((a, b) => b.probability - a.probability);
 
-          if (division === 'Atlantic') {
-            data.push({
-              team: team.trim(),
-              probability: parseFloat(probability)
-            });
-          }
-        });
-
-        // Sort descending
-        data.sort((a,b) => b.probability - a.probability);
-
-        // KPI CARDS
+        // KPI Cards
         if (data.length > 0) {
-          const topTeam = data[0];
-          const avgProb = (data.reduce((s,t)=>s+t.probability,0)/data.length).toFixed(1);
+          const topTeam      = data[0];
+          const avgProb      = (data.reduce((sum, t) => sum + t.probability, 0) / data.length).toFixed(1);
           const playoffCount = data.filter(t => t.probability >= 50).length;
 
           kpiContainer.innerHTML = `
@@ -90,62 +95,108 @@
               <h4>Teams Likely Playoffs</h4>
               <p>${playoffCount}</p>
             </div>
+            <div class="kpi-card">
+              <h4>Total Records</h4>
+              <p>${data.length}</p>
+            </div>
           `;
         }
 
-        // Chart arrays
-        const labels = data.map(d => d.team);
-        const probabilities = data.map(d => d.probability);
-
-        // Team cards
+        // Team Cards
         data.forEach(pred => {
           const card = document.createElement('div');
           card.className = 'team-card';
-
-          const logoPath = `assets/images/${pred.team.toLowerCase().replace(/\s/g,'-')}-logo.svg`;
-
+          const logoPath = `assets/images/${pred.team.toLowerCase().replace(/\s/g, '-')}-logo.svg`;
           card.innerHTML = `
             <img src="${logoPath}" alt="${pred.team}" onerror="this.style.display='none'">
             <h3>${pred.team}</h3>
-            <p>Prediction: ${pred.probability.toFixed(1)}%</p>
+            <p>${pred.season}</p>
+            <p>Playoff Prob: ${pred.probability.toFixed(1)}%</p>
+            <p>${pred.wins}W – ${pred.losses}L</p>
           `;
           container.appendChild(card);
         });
 
-        // Render Chart
+        // --- IMPROVED CHART: Grouped bars by season ---
+        const seasons   = [...new Set(data.map(d => d.season))].sort();
+        const teamNames = [...new Set(data.map(d => d.team))];
+
+        const seasonColors = [
+          'rgba(226,35,26,0.85)',
+          'rgba(255,140,0,0.85)',
+          'rgba(90,160,255,0.85)'
+        ];
+
+        const datasets = seasons.map((season, i) => ({
+          label: season,
+          data: teamNames.map(team => {
+            const match = data.find(d => d.team === team && d.season === season);
+            return match ? parseFloat(match.probability.toFixed(1)) : 0;
+          }),
+          backgroundColor: seasonColors[i] || 'rgba(150,150,150,0.7)',
+          borderColor: 'rgba(255,255,255,0.25)',
+          borderWidth: 1,
+          borderRadius: 4
+        }));
+
         const ctx = document.getElementById('atlanticChart').getContext('2d');
         new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: labels,
-            datasets: [{
-              label: 'Playoff Probability (%)',
-              data: probabilities,
-              backgroundColor: probabilities.map(p =>
-                p >= 50 ? 'rgba(226,35,26,0.8)' : 'rgba(120,120,120,0.6)'
-              ),
-              borderColor: 'rgba(255,255,255,0.8)',
-              borderWidth: 1
-            }]
+            labels: teamNames,
+            datasets: datasets
           },
           options: {
             responsive: true,
-            plugins: { legend: { display: false } },
+            plugins: {
+              legend: {
+                display: true,
+                position: 'top',
+                labels: {
+                  color: '#fff',
+                  font: { size: 13, weight: 'bold' },
+                  padding: 20,
+                  usePointStyle: true,
+                  pointStyle: 'rectRounded'
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`
+                }
+              }
+            },
             scales: {
               y: {
                 beginAtZero: true,
                 max: 100,
-                ticks: { color: '#fff', stepSize: 10, font: { weight:'bold'} }
+                grid: { color: 'rgba(255,255,255,0.06)' },
+                ticks: {
+                  color: '#9aa3ae',
+                  font: { size: 12 },
+                  callback: val => val + '%'
+                },
+                title: {
+                  display: true,
+                  text: 'Playoff Probability (%)',
+                  color: '#9aa3ae',
+                  font: { size: 12 }
+                }
               },
               x: {
-                ticks: { color: '#fff', font: { weight:'bold'} }
+                grid: { display: false },
+                ticks: {
+                  color: '#fff',
+                  font: { size: 12, weight: 'bold' },
+                  maxRotation: 20,
+                  minRotation: 0
+                }
               }
             }
           }
         });
-
       })
-      .catch(err => console.error('Error loading CSV predictions:', err));
+      .catch(err => console.error('Error loading JSON predictions:', err));
   </script>
 
 </body>

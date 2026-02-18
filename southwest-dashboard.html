@@ -4,7 +4,88 @@
   <meta charset="UTF-8">
   <title>Southwest Division Dashboard</title>
   <link rel="stylesheet" href="oracle.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* ── TOOLTIP BASE ─────────────────────────────── */
+    .has-tooltip {
+      position: relative;
+      cursor: help;
+    }
+
+    .has-tooltip .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      z-index: 999;
+
+      background: #0f1216;
+      border: 1px solid rgba(226,35,26,0.4);
+      border-radius: 10px;
+      padding: 10px 14px;
+      width: 210px;
+      text-align: center;
+
+      font-size: 12px;
+      font-weight: 400;
+      color: #9aa3ae;
+      line-height: 1.5;
+      letter-spacing: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .has-tooltip .tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: rgba(226,35,26,0.4);
+    }
+
+    .has-tooltip:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .tooltip strong {
+      display: block;
+      color: #f0f2f5;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .team-card.has-tooltip .tooltip {
+      width: 190px;
+      bottom: calc(100% + 10px);
+    }
+
+    .kpi-card .info-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      line-height: 15px;
+      text-align: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: #6b7885;
+      font-size: 10px;
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+      cursor: help;
+    }
+  </style>
 </head>
 <body>
 
@@ -31,9 +112,9 @@
     <!-- KPI ROW -->
     <div class="kpi-row" id="kpi-row"></div>
 
-    <!-- CHART -->
+    <!-- CHART SECTION -->
     <div class="chart-section">
-      <canvas id="southwestChart" width="400" height="200"></canvas>
+      <canvas id="southwestChart"></canvas>
     </div>
 
     <!-- TEAM CARDS -->
@@ -42,101 +123,198 @@
   </div>
 
   <script>
-    fetch('data/predictions.csv')
-      .then(response => response.text())
-      .then(csvText => {
+    const southwestTeams = [
+      "Dallas Mavericks",
+      "Houston Rockets",
+      "Memphis Grizzlies",
+      "New Orleans Pelicans",
+      "San Antonio Spurs"
+    ];
 
-        const container = document.getElementById('oracle-output');
+    fetch('data/predictions.json')
+      .then(response => response.json())
+      .then(jsonData => {
+        const container    = document.getElementById('oracle-output');
         const kpiContainer = document.getElementById('kpi-row');
 
-        container.innerHTML = '';
+        container.innerHTML    = '';
         kpiContainer.innerHTML = '';
 
-        const rows = csvText.split('\n').slice(1);
-        const data = [];
+        const data = jsonData
+          .filter(item => item.TEAM_NAME && southwestTeams.includes(item.TEAM_NAME))
+          .map(item => ({
+            team:        item.TEAM_NAME,
+            season:      item.SEASON,
+            probability: parseFloat(item['1_predicted_proba']) * 100,
+            predicted:   item.MADE_PLAYOFFS_predicted,
+            actual:      item.MADE_PLAYOFFS,
+            wins:        item.W,
+            losses:      item.L
+          }));
 
-        // ✔ FILTER SOUTHWEST ONLY
-        rows.forEach(row => {
-          const [team, probability, division] = row.split(',');
-          if (!team) return;
-          if (division === 'Southwest') {
-            data.push({ team, probability: parseFloat(probability) });
-          }
-        });
+        data.sort((a, b) => b.probability - a.probability);
 
-        data.sort((a,b) => b.probability - a.probability);
-
-        // KPI Cards
+        // ── KPI Cards ───────────────────────────────────────
         if (data.length > 0) {
-          const topTeam = data[0];
-          const avgProb = (data.reduce((s,t)=>s+t.probability,0)/data.length).toFixed(1);
-          const playoffCount = data.filter(t=>t.probability>=50).length;
+          const topTeam      = data[0];
+          const avgProb      = (data.reduce((sum, t) => sum + t.probability, 0) / data.length).toFixed(1);
+          const playoffCount = data.filter(t => t.probability >= 50).length;
 
           kpiContainer.innerHTML = `
-            <div class="kpi-card">
-              <h4>Top Team</h4>
+            <div class="kpi-card has-tooltip">
+              <h4>Top Team <span class="info-icon">i</span></h4>
               <p>${topTeam.team}</p>
+              <div class="tooltip">
+                <strong>Top Team</strong>
+                The Southwest team with the highest predicted playoff probability across all seasons.
+              </div>
             </div>
-            <div class="kpi-card">
-              <h4>Average Playoff %</h4>
+
+            <div class="kpi-card has-tooltip">
+              <h4>Average Playoff % <span class="info-icon">i</span></h4>
               <p>${avgProb}%</p>
+              <div class="tooltip">
+                <strong>Average Playoff %</strong>
+                The average predicted playoff probability across all Southwest teams and seasons. Higher = division is generally stronger.
+              </div>
             </div>
-            <div class="kpi-card">
-              <h4>Teams Likely Playoffs</h4>
+
+            <div class="kpi-card has-tooltip">
+              <h4>Teams Likely Playoffs <span class="info-icon">i</span></h4>
               <p>${playoffCount}</p>
+              <div class="tooltip">
+                <strong>Teams Likely to Make Playoffs</strong>
+                Number of team-season records where the model predicted a playoff probability above 50%.
+              </div>
+            </div>
+
+            <div class="kpi-card has-tooltip">
+              <h4>Total Records <span class="info-icon">i</span></h4>
+              <p>${data.length}</p>
+              <div class="tooltip">
+                <strong>Total Records</strong>
+                Total team-season entries for this division (5 teams × 3 seasons = 15 records).
+              </div>
             </div>
           `;
         }
 
-        // Chart data
-        const labels = data.map(d => d.team);
-        const probabilities = data.map(d => d.probability);
-
-        // Cards
+        // ── Team Cards ──────────────────────────────────────
         data.forEach(pred => {
           const card = document.createElement('div');
-          card.className = 'team-card';
+          card.className = 'team-card has-tooltip';
+          const logoPath = `assets/images/${pred.team.toLowerCase().replace(/\s/g, '-')}-logo.svg`;
 
-          const logoPath =
-            `assets/images/${pred.team.toLowerCase().replace(/\s/g,'-')}-logo.svg`;
+          const madePlayoffs  = pred.actual    === '1';
+          const predictedIn   = pred.predicted === '1';
+          const correct       = pred.actual    === pred.predicted;
+
+          const outcomeLabel  = madePlayoffs ? '✅ Made Playoffs' : '❌ Missed Playoffs';
+          const predLabel     = predictedIn  ? 'Model predicted: IN' : 'Model predicted: OUT';
+          const accuracyLabel = correct      ? '✓ Prediction was correct' : '✗ Prediction was wrong';
+
+          const probLabel = pred.probability >= 75
+            ? 'Very likely to make playoffs'
+            : pred.probability >= 50
+            ? 'More likely than not to make playoffs'
+            : pred.probability >= 25
+            ? 'Unlikely to make playoffs'
+            : 'Very unlikely to make playoffs';
 
           card.innerHTML = `
             <img src="${logoPath}" alt="${pred.team}" onerror="this.style.display='none'">
             <h3>${pred.team}</h3>
-            <p>Prediction: ${pred.probability.toFixed(1)}%</p>
+            <p>${pred.season}</p>
+            <p>Playoff Prob: ${pred.probability.toFixed(1)}%</p>
+            <p>${pred.wins}W – ${pred.losses}L</p>
+            <div class="tooltip">
+              <strong>${pred.team} · ${pred.season}</strong>
+              📊 ${probLabel} (${pred.probability.toFixed(1)}%)<br><br>
+              ${outcomeLabel}<br>
+              ${predLabel}<br>
+              ${accuracyLabel}
+            </div>
           `;
-
           container.appendChild(card);
         });
 
-        // Chart
+        // ── Grouped Bar Chart by Season ─────────────────────
+        const seasons   = [...new Set(data.map(d => d.season))].sort();
+        const teamNames = [...new Set(data.map(d => d.team))];
+
+        const seasonColors = [
+          'rgba(226,35,26,0.85)',
+          'rgba(255,140,0,0.85)',
+          'rgba(90,160,255,0.85)'
+        ];
+
+        const datasets = seasons.map((season, i) => ({
+          label: season,
+          data: teamNames.map(team => {
+            const match = data.find(d => d.team === team && d.season === season);
+            return match ? parseFloat(match.probability.toFixed(1)) : 0;
+          }),
+          backgroundColor: seasonColors[i] || 'rgba(150,150,150,0.7)',
+          borderColor: 'rgba(255,255,255,0.25)',
+          borderWidth: 1,
+          borderRadius: 4
+        }));
+
         const ctx = document.getElementById('southwestChart').getContext('2d');
         new Chart(ctx, {
           type: 'bar',
-          data: {
-            labels: labels,
-            datasets: [{
-              label: 'Playoff Probability (%)',
-              data: probabilities,
-              backgroundColor: probabilities.map(p =>
-                p >= 50 ? 'rgba(226,35,26,0.8)' : 'rgba(100,100,100,0.6)'
-              ),
-              borderColor: 'rgba(255,255,255,0.8)',
-              borderWidth: 1
-            }]
-          },
+          data: { labels: teamNames, datasets: datasets },
           options: {
             responsive: true,
-            plugins: { legend: { display: false } },
+            plugins: {
+              legend: {
+                display: true,
+                position: 'top',
+                labels: {
+                  color: '#fff',
+                  font: { size: 13, weight: 'bold' },
+                  padding: 20,
+                  usePointStyle: true,
+                  pointStyle: 'rectRounded'
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`
+                }
+              }
+            },
             scales: {
-              y: { beginAtZero:true, max:100, ticks:{color:'#fff',font:{weight:'bold'}} },
-              x: { ticks:{color:'#fff',font:{weight:'bold'}} }
+              y: {
+                beginAtZero: true,
+                max: 100,
+                grid: { color: 'rgba(255,255,255,0.06)' },
+                ticks: {
+                  color: '#9aa3ae',
+                  font: { size: 12 },
+                  callback: val => val + '%'
+                },
+                title: {
+                  display: true,
+                  text: 'Playoff Probability (%)',
+                  color: '#9aa3ae',
+                  font: { size: 12 }
+                }
+              },
+              x: {
+                grid: { display: false },
+                ticks: {
+                  color: '#fff',
+                  font: { size: 12, weight: 'bold' },
+                  maxRotation: 20,
+                  minRotation: 0
+                }
+              }
             }
           }
         });
-
       })
-      .catch(err => console.error('Error loading CSV predictions:', err));
+      .catch(err => console.error('Error loading JSON predictions:', err));
   </script>
 
 </body>
