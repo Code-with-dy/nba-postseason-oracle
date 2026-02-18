@@ -338,9 +338,7 @@ body {
   color: var(--text-muted);
 }
 
-/* ============================================
-   SCROLLBAR
-   ============================================ */
+
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb {
@@ -349,9 +347,7 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--red-dark); }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+
 @media (max-width: 768px) {
   .header { font-size: 36px; letter-spacing: 3px; padding: 32px 16px; }
   .dashboard-container { padding: 24px 16px 40px; }
@@ -363,3 +359,80 @@ body {
   .kpi-row { grid-template-columns: 1fr; }
   .teams-container { grid-template-columns: repeat(2, 1fr); }
 }
+
+
+.navbar {
+  background-color: #1a1a1a;  
+  position: fixed;            
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  font-family: Arial, sans-serif;
+}
+
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+  position: relative;
+  margin-right: 20px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.navbar ul li a:hover {
+  background-color: #e2231a;
+  border-radius: 4px;
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 38px;  
+  left: 0;
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  padding: 0;
+  border-radius: 4px;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+  font-weight: normal;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #e2231a;
+}
+
+body {
+  padding-top: 60px; 
+}
+
