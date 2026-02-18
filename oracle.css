@@ -1,13 +1,7 @@
-/* ============================================
-   ORACLE SUB-NAVBAR
-   ============================================ */
 .sub-navbar {
-  background-color: #161b21; /* dark but slightly different from main clone navbar */
-  padding: 8px 24px;
+  background: #161b21;
+  padding: 10px 24px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  font-family: Arial, sans-serif;
-  position: relative; /* sits under the main navbar */
-  z-index: 900;
 }
 
 .sub-navbar ul {
@@ -15,73 +9,21 @@
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.sub-navbar ul li {
-  position: relative;
+  gap: 8px;
+  justify-content: center;
 }
 
 .sub-navbar ul li a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   padding: 8px 14px;
   display: block;
-  transition: background 0.3s;
   border-radius: 4px;
   font-size: 13px;
+  transition: background 0.3s;
 }
 
 .sub-navbar ul li a:hover {
-  background-color: #e2231a;
-}
-
-/* Dropdown Menu */
-.sub-navbar .dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.sub-navbar .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 32px; /* below the sub-navbar */
-  left: 0;
-  background-color: #1a1a1a;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-  padding: 0;
-  border-radius: 4px;
-  min-width: 160px;
-  z-index: 1000;
-}
-
-.sub-navbar .dropdown-menu li a {
-  padding: 10px 12px;
-  font-weight: normal;
-  color: #fff;
-}
-
-.sub-navbar .dropdown-menu li a:hover {
-  background-color: #e2231a;
-}
-
-/* Optional mobile responsiveness */
-@media (max-width: 768px) {
-  .sub-navbar ul {
-    flex-direction: column;
-    gap: 0;
-  }
-  .sub-navbar ul li {
-    width: 100%;
-  }
-  .sub-navbar ul li a {
-    padding: 10px 14px;
-  }
-  .sub-navbar .dropdown-menu {
-    position: relative;
-    top: 0;
-    left: 0;
-    box-shadow: none;
-  }
+  background: #e2231a;
 }
