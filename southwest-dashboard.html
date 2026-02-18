@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Atlantic Division Dashboard</title>
+  <title>Southwest Division Dashboard</title>
   <link rel="stylesheet" href="oracle.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -10,14 +10,14 @@
 
   <!-- HEADER -->
   <header class="header">
-    Atlantic Division Oracle Dashboard
+    Southwest Division Oracle Dashboard
   </header>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <ul>
       <li><a href="southeast-dashboard.html">Southeast</a></li>
-      <li><a href="atlantic-dashboard.html" class="active">Atlantic</a></li>
+      <li><a href="atlantic-dashboard.html">Atlantic</a></li>
       <li><a href="central-dashboard.html">Central</a></li>
       <li><a href="northwest-dashboard.html">Northwest</a></li>
       <li><a href="pacific-dashboard.html">Pacific</a></li>
@@ -25,7 +25,7 @@
     </ul>
   </nav>
 
-  <!-- DASHBOARD -->
+  <!-- DASHBOARD CONTAINER -->
   <div class="dashboard-container">
 
     <!-- KPI ROW -->
@@ -33,7 +33,7 @@
 
     <!-- CHART -->
     <div class="chart-section">
-      <canvas id="atlanticChart" width="400" height="200"></canvas>
+      <canvas id="southwestChart" width="400" height="200"></canvas>
     </div>
 
     <!-- TEAM CARDS -->
@@ -55,27 +55,22 @@
         const rows = csvText.split('\n').slice(1);
         const data = [];
 
-        // Parse CSV + filter ATLANTIC
+        // ✔ FILTER SOUTHWEST ONLY
         rows.forEach(row => {
           const [team, probability, division] = row.split(',');
           if (!team) return;
-
-          if (division === 'Atlantic') {
-            data.push({
-              team: team.trim(),
-              probability: parseFloat(probability)
-            });
+          if (division === 'Southwest') {
+            data.push({ team, probability: parseFloat(probability) });
           }
         });
 
-        // Sort descending
         data.sort((a,b) => b.probability - a.probability);
 
-        // KPI CARDS
+        // KPI Cards
         if (data.length > 0) {
           const topTeam = data[0];
           const avgProb = (data.reduce((s,t)=>s+t.probability,0)/data.length).toFixed(1);
-          const playoffCount = data.filter(t => t.probability >= 50).length;
+          const playoffCount = data.filter(t=>t.probability>=50).length;
 
           kpiContainer.innerHTML = `
             <div class="kpi-card">
@@ -93,27 +88,29 @@
           `;
         }
 
-        // Chart arrays
+        // Chart data
         const labels = data.map(d => d.team);
         const probabilities = data.map(d => d.probability);
 
-        // Team cards
+        // Cards
         data.forEach(pred => {
           const card = document.createElement('div');
           card.className = 'team-card';
 
-          const logoPath = `assets/images/${pred.team.toLowerCase().replace(/\s/g,'-')}-logo.svg`;
+          const logoPath =
+            `assets/images/${pred.team.toLowerCase().replace(/\s/g,'-')}-logo.svg`;
 
           card.innerHTML = `
             <img src="${logoPath}" alt="${pred.team}" onerror="this.style.display='none'">
             <h3>${pred.team}</h3>
             <p>Prediction: ${pred.probability.toFixed(1)}%</p>
           `;
+
           container.appendChild(card);
         });
 
-        // Render Chart
-        const ctx = document.getElementById('atlanticChart').getContext('2d');
+        // Chart
+        const ctx = document.getElementById('southwestChart').getContext('2d');
         new Chart(ctx, {
           type: 'bar',
           data: {
@@ -122,7 +119,7 @@
               label: 'Playoff Probability (%)',
               data: probabilities,
               backgroundColor: probabilities.map(p =>
-                p >= 50 ? 'rgba(226,35,26,0.8)' : 'rgba(120,120,120,0.6)'
+                p >= 50 ? 'rgba(226,35,26,0.8)' : 'rgba(100,100,100,0.6)'
               ),
               borderColor: 'rgba(255,255,255,0.8)',
               borderWidth: 1
@@ -132,14 +129,8 @@
             responsive: true,
             plugins: { legend: { display: false } },
             scales: {
-              y: {
-                beginAtZero: true,
-                max: 100,
-                ticks: { color: '#fff', stepSize: 10, font: { weight:'bold'} }
-              },
-              x: {
-                ticks: { color: '#fff', font: { weight:'bold'} }
-              }
+              y: { beginAtZero:true, max:100, ticks:{color:'#fff',font:{weight:'bold'}} },
+              x: { ticks:{color:'#fff',font:{weight:'bold'}} }
             }
           }
         });
